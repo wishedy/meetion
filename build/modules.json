@@ -1,0 +1,18 @@
+{
+  "commShare": {
+    "router": true,
+    "store": true,
+    "des": "该模块的描述文字",
+    "author": "******",
+    "index": 0
+  },
+  "personal": {
+    "personal_index": {
+      "router": true,
+      "store": true,
+      "des": "该模块的描述文字",
+      "author": "******",
+      "index": 1
+    }
+  }
+}
