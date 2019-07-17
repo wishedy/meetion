@@ -85,8 +85,8 @@ var createModule = function(options){
     copyFile(utils.resolve('src/commModule/scssDemo.scss'),utils.resolve('src/styles/pages/'+createKeyName+'/'+createKeyName+'.scss'));
     console.log(chalk.cyan('module创建完成.\n'));
     console.log(chalk.yellow(
-        'scss代码输入在:src/styles/pages/'+createKeyName+'/'+createKeyName+'.scss中.\n' +
-        'src/pages/'+createPath+'/App.vue中的demo/demo.scss更名为'+createKeyName+'/'+createKeyName+'.scss.\n'+
+        'scss代码输入在:src/styles/pages/'+createKeyName+'/'+createKeyName+'.scss中编写.\n' +
+        'src/pages/'+createPath+'/index.vue中的demo/demo.scss更名为'+createKeyName+'/'+createKeyName+'.scss.\n'+
         '如有疑问请与张恒联系\n'
     ))
 };
