@@ -1,6 +1,6 @@
 const mutaions = {
-    methodFun(state,data){
-        state.num=data;
-    }
+  methodFun(state, data) {
+    state.num = data;
+  }
 };
 export default mutaions;

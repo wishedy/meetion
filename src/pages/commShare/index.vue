@@ -4,30 +4,28 @@
 </template>
 
 <script type="text/ecmascript-6">
-    export default {
-        components: {
+export default {
+  components: {
 
-        },
-        data(){
-            return {
+  },
+  data() {
+    return {
 
-            }
-        },
-        beforeMount(){
-        },
-        computed:{
-
-        },
-        methods: {
-
-        },
-        watch:{
-
-        }
     };
+  },
+  beforeMount() {
+  },
+  computed: {
+
+  },
+  methods: {
+
+  },
+  watch: {
+
+  }
+};
 </script>
 <style lang="scss" rel="stylesheet/scss">
-    @import "scss/pages/demo/demo.scss";
+    @import "@styles/pages/commShare/commShare.scss";
 </style>
-
-

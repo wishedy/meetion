@@ -1,6 +1,6 @@
 const user = {
   state: {
-    name: 'hellp world!',
+    name: 'hellp world!'
   },
 
   mutations: {
@@ -10,7 +10,7 @@ const user = {
   },
 
   actions: {
-    changeName: ({commit}) => {
+    changeName: ({ commit }) => {
       commit('CHANGE_NAME');
     }
   }

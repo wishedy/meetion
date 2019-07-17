@@ -1,8 +1,8 @@
 
 export default {
-    routes: [
-        {
-            path: '/',
-        }
-    ]
-}
+  routes: [
+    {
+      path: '/'
+    }
+  ]
+};

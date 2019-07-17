@@ -3,6 +3,31 @@
     "router": true,
     "store": true,
     "des": "该模块的描述文字",
+    "title": "公共分享页面",
+    "author": "******",
+    "index": 0
+  },
+  "index": {
+    "router": true,
+    "store": true,
+    "des": "该模块的描述文字",
+    "title": "公共分享页面",
+    "author": "******",
+    "index": 0
+  },
+  "list": {
+    "router": true,
+    "store": true,
+    "des": "该模块的描述文字",
+    "title": "公共分享页面",
+    "author": "******",
+    "index": 0
+  },
+  "detail": {
+    "router": true,
+    "store": true,
+    "des": "该模块的描述文字",
+    "title": "公共分享页面",
     "author": "******",
     "index": 0
   },
@@ -10,6 +35,7 @@
     "personal_index": {
       "router": true,
       "store": true,
+      "title": "个人中心首页",
       "des": "该模块的描述文字",
       "author": "******",
       "index": 1

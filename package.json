@@ -24,7 +24,7 @@
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
-    "eslint": "^5.0.1",
+    "eslint": "^5.16.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.5.0",
     "file-loader": "^1.1.11",
@@ -51,8 +51,17 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-eslint": "^10.0.2",
     "chalk": "^2.4.2",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
     "vue": "^2.5.16",
+    "vue-router": "^3.0.7",
     "vuex": "^3.0.1"
   }
 }
