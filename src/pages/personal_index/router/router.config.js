@@ -1,8 +1,0 @@
-
-export default {
-  routes: [
-    {
-      path: '/'
-    }
-  ]
-};

@@ -1,5 +1,5 @@
 <template>
-    <section class="al-mainInner">
+    <section class="ml-mainInner">
     </section>
 </template>
 
@@ -27,7 +27,7 @@
     };
 </script>
 <style lang="scss" rel="stylesheet/scss">
-    @import "scss/pages/demo/demo.scss";
+    @import "@styles/pages/demo/demo.scss";
 </style>
 
 
