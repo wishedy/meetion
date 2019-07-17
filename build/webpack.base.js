@@ -1,12 +1,11 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
+const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const config = require('./config'); // 多页面的配置项
 let HTMLPlugins = [];
 let Entries = {};
-
 config.HTMLDirs.forEach(item => {
   let filename = `${item.page}.html`;
   if (item.dir) filename = `${item.dir}/${item.page}.html`;
@@ -23,9 +22,18 @@ config.HTMLDirs.forEach(item => {
 const env = process.env.BUILD_MODE.trim();
 let ASSET_PATH = '/'; // dev 环境
 if (env === 'prod') ASSET_PATH = '//abc.com/static/'; // build 时设置成实际使用的静态服务地址
-console.log(Entries);
+let createEntryModule = ()=>{
+  let resultJson = {};
+  if(process.env.BUILD_MODULE_NAME!=='index'){
+    let EntryName = process.env.BUILD_MODULE_NAME;
+    resultJson[EntryName] = Entries[EntryName];
+  }else{
+    resultJson = Entries;
+  }
+  return resultJson;
+};
 module.exports = {
-  entry: Entries,
+  entry: createEntryModule(),
   output: {
     publicPath: ASSET_PATH,
     filename: 'js/[name].[hash:8].js',

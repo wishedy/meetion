@@ -38,9 +38,6 @@ var createModule = function(options){
     var index = options.index;
     var storeKey = false;
     var routerKey = false;
-    var arrKey =[];
-    console.log('jinlai');
-    console.log(parseInt(index,10));
   if(!(utils.fsExistsSync(utils.resolve('src/pages/'+createKeyName)))){
     fs.mkdirSync(utils.resolve('src/pages/'+createKeyName));
   }

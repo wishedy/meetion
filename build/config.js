@@ -1,7 +1,5 @@
 var fs = require('fs');
 var path = require('path');
-var utils = require('./untils');
-var chalk = require('chalk');
 var moduleDataPath = path.resolve(__dirname+'/modules.json');
 var moduleData = fs.readFileSync(moduleDataPath,'utf-8');
 var moduleJson = JSON.parse(moduleData);
