@@ -1,3 +1,27 @@
 
 @import "../modules/common-modules";
 @include normalize(mobile);
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background:rgba(246,246,246,1);
+}
+
+a {
+  @include unstyled-link();
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li{
+  list-style: none;
+}
+i{
+  font-style: normal;
+}
+.ml-mainInner{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
