@@ -1,0 +1,119 @@
+@import '../modules/utilities/_utilities';
+.ml-banner{
+  height: rem(368px);
+  .content{
+    float: left;
+    width: rem(710px);
+    margin-top: rem(26px);
+    margin-left: rem(20px);
+    margin-right: rem(20px);
+    height:rem(328px);
+    background:rgba(255,255,255,1);
+    box-shadow:0px rem(4px) rem(20px) rem(-2px) rgba(0,0,0,0.07);
+    border-radius:rem(12px);
+    .center-content{
+      width: rem(670px);
+      height: rem(234px);
+      border-radius:12px;
+      overflow: hidden;
+      margin: rem(20px) rem(20px) rem(14px) rem(20px);
+      position: relative;
+      background: url("http://pic39.nipic.com/20140315/2531170_191053321000_2.jpg") no-repeat center center/cover;
+      .mask{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom:0;
+        background: rgba(0,0,0,.5003);
+        .sign-title{
+          width:rem(138px);
+          height:rem(40px);
+          background:linear-gradient(270deg,rgba(255,194,29,1) 0%,rgba(255,212,94,1) 100%);
+          border-radius:rem(200px);
+          position: absolute;
+          left: rem(16px);
+          top:rem(16px);
+          .icon{
+            width: rem(32px);
+            height: rem(32px);
+            border-radius: 50%;
+            float: left;
+            margin: rem(4px) rem(6px) 0 rem(4px);
+            background: #fff url("../assets/components/banner/star.png") no-repeat center center/cover;
+          }
+          .des{
+            line-height:rem(40px);
+            font-size:rem(20px);
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            float: left;
+            font-style: normal;
+            letter-spacing:rem(1px);
+          }
+        }
+        .title{
+          width: 100%;
+          height:rem(44px);
+          font-size:rem(32px);
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          color:rgba(255,255,255,1);
+          line-height:rem(44px);
+          letter-spacing:rem(2px);
+          text-align: center;
+          margin-bottom: rem(14px);
+          float: left;
+          margin-top: rem(54px);
+        }
+        .des-content{
+          width:rem(566px);
+          height:rem(94px);
+          font-size:rem(20px);
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          color:rgba(255,255,255,1);
+          line-height:rem(28px);
+          margin: 0 auto;
+          letter-spacing:rem(1px);
+        }
+      }
+    }
+    .banner-detail{
+      margin: 0 rem(40px) 0 rem(28px);
+      @include clearfix();
+      .userList{
+        height: rem(44px);
+        float: left;
+        .userItem{
+          width: rem(44px);
+          height: rem(44px);
+          border-radius: 50%;
+          background: url("http://b-ssl.duitang.com/uploads/item/201704/21/20170421220457_TmH8Z.jpeg") no-repeat center center/cover;
+        }
+      }
+      .paginator{
+        float: right;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        height: rem(44px);
+        .pager-item{
+          width:rem(12px);
+          height:rem(12px);
+          background:rgba(255,131,117,1);
+          border-radius: 50%;
+          margin-left: rem(8px);
+          &.active{
+            width:rem(30px);
+            height:rem(12px);
+            background:rgba(255,61,50,1);
+            border-radius:rem(6px);
+          }
+        }
+      }
+    }
+  }
+}

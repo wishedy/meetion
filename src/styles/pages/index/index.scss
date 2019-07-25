@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@import '../../modules/utilities/_utilities';
 body{
   background: #cfcfcf;
+}
+.ml-indexContent{
+  margin-top: rem(84px);
+  height: auto;
+  width: 100%;
 }

@@ -1,0 +1,51 @@
+//utilities
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+.ml-components-headerBar{
+  height: rem(84px);
+  width: rem(750px);
+  display: flex;
+  position: fixed;
+  top:0;
+  left: 0;
+  right:0;
+  flex-direction: row;
+  align-items:flex-end;
+  justify-content: center;
+  background:linear-gradient(270deg,rgba(255,132,119,1) 0%,rgba(255,60,49,1) 100%);
+  .ml-components-tabList{
+    height: rem(48px);
+    margin-bottom: rem(20px);
+    .tabItem{
+      height:rem(48px);
+      font-size:rem(34px);
+      font-family:PingFangSC-Light;
+      font-weight:300;
+      color:rgba(255,255,255,1);
+      line-height:rem(48px);
+      letter-spacing:rem(1px);
+      float: left;
+      position: relative;
+      &:nth-of-type(2){
+        margin-left:rem(48px) ;
+        margin-right: rem(48px);
+      }
+     &.active{
+       font-weight:600;
+       color:rgba(255,255,255,1);
+       &:after{
+         content:" ";
+         position: absolute;
+         width:rem(70px);
+         height:rem(6px);
+         background:rgba(255,255,255,1);
+         border-radius:rem(4px);
+         bottom:rem(-6px);
+         left: 0;
+         right:0;
+       }
+     }
+    }
+  }
+}

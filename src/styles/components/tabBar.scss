@@ -1,5 +1,7 @@
 //utilities
-@import '../modules/utilities/_utilities';
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
 .ml-components-tabBar{
   width:rem(746px);
   height:rem(98px);
