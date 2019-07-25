@@ -61,7 +61,7 @@ module.exports = {
       '@mixins': path.resolve(__dirname, '../src/pages/page.js'),
       '@vuex': path.resolve(__dirname, '../src/store'),
     },
-    extensions:['*','.css','.js','.vue']
+    extensions:['*','.css','.js','.vue',".scss"]
   },
   plugins: [
     new VueLoaderPlugin(),

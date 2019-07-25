@@ -1,7 +1,7 @@
 //utilities
 @import '../modules/utilities/_utilities';
 .ml-components-tabBar{
-  width:rem(750px);
+  width:rem(746px);
   height:rem(98px);
   background:rgba(255,255,255,1);
   border:rem(2px) solid rgba(213,213,213,1);
@@ -26,11 +26,13 @@
       color:rgba(142,142,147,1);
       line-height:rem(28px);
       width: rem(50px);
+      text-align: center;
     }
     &.home {
       .icon {
         height: rem(47px);
         margin-bottom: rem(6px);
+        background: url("../assets/components/tabBar/home.png") no-repeat center center/cover;
       }
     }
 
@@ -38,6 +40,7 @@
       .icon {
         height: rem(41px);
         margin-bottom: rem(8px);
+        background: url("../assets/components/tabBar/message.png") no-repeat center center/cover;
       }
     }
 
@@ -45,10 +48,24 @@
       .icon {
         height: rem(50px);
         margin-bottom: rem(4px);
+        background: url("../assets/components/tabBar/personal-center.png") no-repeat center center/cover;
       }
     }
     &.active{
-      color:rgba(255,60,49,1);
+      .title{
+        color:rgba(255,60,49,1);
+      }
+      &.home{
+        .icon{
+          background: url("../assets/components/tabBar/home-active.png") no-repeat center center/cover;
+        }
+      }
+      &.message{
+        background: url("../assets/components/tabBar/message-active.png") no-repeat center center/cover;
+      }
+      &.personal{
+        background: url("../assets/components/tabBar/personal-center-active.png") no-repeat center center/cover;
+      }
     }
   }
 }
