@@ -23,7 +23,7 @@ let formatJson = ()=>{
   }
 };
 formatJson();
-module_count =FRESH_MODULE_LIST.length-1;
+module_count =FRESH_MODULE_LIST.length;
 
 module_list = (answers, input) => {
     input = input || '';
