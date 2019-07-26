@@ -2,6 +2,20 @@ const path = require('path');
 const webpackBase = require('./webpack.base');
 const webpackMerge = require('webpack-merge');
 const config = require('./config');
+let checkIpAddress =  function() {
+  var interfaces = require('os').networkInterfaces(); // 在开发环境中获取局域网中的本机iP地址
+  var IPAdress = '';
+  for (var devName in interfaces) {
+    var iface = interfaces[devName];
+    for (var i = 0; i < iface.length; i++) {
+      var alias = iface[i];
+      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+        IPAdress = alias.address;
+      }
+    }
+  }
+  return IPAdress;
+};
 module.exports = webpackMerge(webpackBase, {
   mode: 'development',
   module: {
@@ -68,10 +82,12 @@ module.exports = webpackMerge(webpackBase, {
   },
   devServer: {
     contentBase: config.devServerOutputPath,
+    host: checkIpAddress(),
     overlay: {
       errors: true,
       warnings: true,
     },
+    port: 8090,
     open: true // 服务启动后 打开浏览器
   }
 });
