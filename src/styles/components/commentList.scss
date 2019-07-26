@@ -1,0 +1,102 @@
+@import '../modules/utilities/_utilities';
+.ml-comment-list{
+  margin-top: rem(28px);
+  height: auto;
+  @include clearfix();
+  .ml-comment-item{
+    @include clearfix();
+    height: auto;
+    margin-bottom: rem(28px);
+    .user-logo{
+      float: left;
+      width: rem(40px);
+      height: rem(40px);
+      border-radius: 50%;
+      margin-right: rem(8px);
+      background: url("https://dpic2.tiankong.com/lt/9v/QJ6170661618.jpg?x-oss-process=style/240h") no-repeat center center/cover;
+    }
+    .comment-detail{
+      width:620px;
+      float: left;
+      .user-name{
+        height:rem(28px);
+        font-size:rem(20px);
+        font-family:PingFangSC-Light;
+        font-weight:300;
+        color:rgba(98,53,255,1);
+        line-height:rem(28px);
+        margin-bottom: rem(4px);
+      }
+      .comment-content{
+        width:rem(620px);
+        height:rem(68px);
+        font-size:rem(24px);
+        font-family:PingFangSC-Light;
+        font-weight:300;
+        color:rgba(68,68,68,1);
+        line-height:rem(34px);
+        letter-spacing: rem(1px);
+      }
+
+    }
+    .ml-comment-interflow{
+      width: rem(590px);
+      max-height:rem(184px);
+      float: left;
+      background:rgba(246,246,246,1);
+      border-radius:rem(12px);
+      margin-left: rem(28px);
+      margin-top: rem(20px);
+      padding: rem(20px);
+      position: relative;
+      .more{
+        position: absolute;
+        right: rem(28px);
+        bottom:rem(20px);
+        @include clearfix();
+        span{
+          float: right;
+          margin-left: rem(8px);
+          width: rem(8px);
+          height: rem(8px);
+          background: #B2B2B2;
+          border-radius: 50%;
+        }
+      }
+      .interflow-item{
+        width:rem(590px);
+        height:rem(68px);
+        font-size:rem(24px);
+        font-family:PingFangSC-Light;
+        font-weight:300;
+        color:#666666;
+        letter-spacing: rem(1px);
+        line-height:rem(34px);
+        margin-bottom: rem(20px);
+        .comment-user-name:nth-of-type(1){
+          margin-right:rem(10px);
+        }
+        .comment-user-name:nth-of-type(2){
+          margin: 0 rem(10px);
+        }
+        .my-name{
+          color: #F06361;
+        }
+        .your-name{
+          color: #8967FF;
+        }
+      }
+    }
+  }
+  .ml-comment-more{
+    height:rem(28px);
+    font-size:rem(20px);
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(176,176,176,1);
+    line-height:rem(28px);
+    text-align: center;
+    padding-top: rem(12px);
+    width: 100%;
+  }
+}

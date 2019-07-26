@@ -13,7 +13,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
+  z-index: 1;
   .ml-components-tabBar-item {
     width: rem(50px);
     .icon{

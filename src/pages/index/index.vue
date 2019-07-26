@@ -2,6 +2,7 @@
     <section class="ml-mainInner">
         <TopHeader></TopHeader>
         <Tab></Tab>
+        <PublishBar></PublishBar>
         <IndexContent></IndexContent>
     </section>
 </template>
@@ -9,11 +10,13 @@
 <script type="text/ecmascript-6">
 import TopHeader from '@components/HeaderBar.vue';
 import Tab from '@components/TabBar.vue';
+import PublishBar from '@components/PublishBar.vue';
 import IndexContent from './components/IndexContent';
 export default {
   components: {
     Tab,
     TopHeader,
+    PublishBar,
     IndexContent
   },
   data() {
