@@ -30,5 +30,20 @@
             refreshRem()
         }
     })
-    window.addEventListener('resize', refreshRem)
+    window.addEventListener('resize', refreshRem);
+    /*禁止页面缩放*/
+    document.addEventListener('touchstart', function () {
+        if (event.touches.length > 1) {
+            event.preventDefault()
+        }
+    })
+    var lastTouchEnd = 0
+    document.addEventListener('touchend', function () {
+        var now = (new Date()).getTime()
+        if (now - lastTouchEnd < 300) {
+            event.preventDefault()
+        }
+        lastTouchEnd = now
+    }, false)
+    /*禁止页面缩放*/
 })(window, document)

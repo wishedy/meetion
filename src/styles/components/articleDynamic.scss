@@ -1,0 +1,80 @@
+@import '../modules/utilities/_utilities';
+.ml-article-dynamic{
+  width: rem(750px);
+  .ml-article-logo{
+    width: rem(750px);
+    height: rem(422px);
+    position: relative;
+    background: url("http://lib.huitu.com/TopicCover/20190626175016954.jpg") no-repeat center center/cover;
+    .article-sign{
+      position: absolute;
+      left: 0;
+      top:rem(22px);
+      width:rem(134px);
+      height:rem(44px);
+      background:linear-gradient(90deg,rgba(50,210,173,1) 0%,rgba(53,244,200,1) 100%);
+      border-radius:0px rem(200px) rem(200px) 0px;
+      text-align: center;
+      font-size:rem(28px);
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+      line-height:rem(44px);
+      letter-spacing:rem(1px);
+    }
+  }
+  .ml-article-title{
+    height:rem(44px);
+    font-size:rem(32px);
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(68,68,68,1);
+    line-height:rem(44px);
+    margin-top: rem(20px);
+    margin-bottom: rem(32px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .title{
+      position: relative;
+      &:after{
+        content: " ";
+        display: block;
+        background: url("../assets/components/dynamic/plus.png") no-repeat center center/cover;
+        position: absolute;
+        width:rem(20px);
+        height:rem(20px);
+        color: rgba(50,211,174,1);
+        left: rem(-24px);
+        top:rem(2px);
+      }
+      &:before{
+        content: " ";
+        display: block;
+        background: url("../assets/components/dynamic/plus.png") no-repeat center center/cover;
+        position: absolute;
+        width:rem(16px);
+        height:rem(16px);
+        color: rgba(50,211,174,1);
+        right: rem(-22px);
+        bottom:rem(4px);
+      }
+    }
+  }
+  .ml-article-content{
+    width:rem(686px);
+    height:rem(210px);
+    font-size:rem(28px);
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:rem(40px);
+    letter-spacing:rem(1px);
+    margin: 0 auto;
+  }
+  .ml-article-commentContainer{
+    padding: 0 rem(32px);
+  }
+
+}

@@ -3,6 +3,8 @@
   padding: rem(26px) rem(32px) rem(36px) rem(32px);
   height: auto;
   margin-top: rem(20px);
+  margin-bottom: rem(20px);
+  background: #fff;
   @include clearfix();
   .dynamic-type{
     width: rem(148px);
@@ -69,7 +71,7 @@
         .user-age{
           width:rem(86px);
           height:rem(36px);
-          background:rgba(255,165,165,1);
+
           border-radius:rem(18px);
           margin-right: rem(12px);
           font-size:rem(24px);
@@ -84,8 +86,19 @@
           .icon{
             width: rem(28px);
             height: rem(28px);
-            background: url("../assets/components/dynamic/girl.png") no-repeat center center/cover;
             margin-right: rem(4px);
+          }
+          &.girl{
+            background:rgba(255,165,165,1);
+            .icon{
+              background: url("../assets/components/dynamic/girl.png") no-repeat center center/cover;
+            }
+          }
+          &.boy{
+            background:rgba(51,197,254,1);
+            .icon{
+              background: url("../assets/components/dynamic/boy.png") no-repeat center center/cover;
+            }
           }
         }
         .user-local-address{
@@ -371,5 +384,10 @@
         letter-spacing: rem(1px);
       }
     }
+  }
+  &.article{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
   }
 }
