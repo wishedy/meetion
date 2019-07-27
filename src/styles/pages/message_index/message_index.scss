@@ -1,0 +1,233 @@
+@charset "UTF-8";
+@import '../../modules/utilities/_utilities';
+body{
+  background: #cfcfcf;
+}
+.ml-message-content{
+  margin-top: rem(84px);
+  margin-bottom: rem(98px);
+  .ml-message-handle {
+    .handle-item {
+      width: rem(670px);
+      height: rem(118px);
+      background: rgba(255, 255, 255, 1);
+      border-top: rem(2px) solid rgba(237, 237, 237, 1);
+      padding: 0 rem(40px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .detail-info {
+        width: rem(400px);
+        height: rem(64px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        line-height: rem(64px);
+        font-size:rem(32px);
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(68,68,68,1);
+        .sign {
+          width: rem(64px);
+          height: rem(64px);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          margin-right: rem(16px);
+          .icon {
+            display: inline-block;
+          }
+        }
+        em{
+          font-style: normal;
+        }
+      }
+      .message-num {
+        width: rem(200px);
+        height: rem(44px);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        .num{
+          width:rem(66px);
+          height:rem(44px);
+          line-height:rem(44px);
+          background:rgba(249,249,249,1);
+          border-radius:rem(200px);
+          text-align: center;
+          position: relative;
+          font-size:rem(20px);
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(136,136,136,1);
+          margin-right: rem(10px);
+          i{
+            width:rem(12px);
+            height:rem(12px);
+            border-radius: 50%;
+            right: rem(-3px);
+            top:rem(-3px);
+            position: absolute;
+            background:rgba(245,75,49,1);
+          }
+        }
+        .arrow{
+          width:rem(21px);
+          height:rem(36px);
+          background: url("../../assets/components/topic/right.png") no-repeat center center/cover;
+        }
+      }
+      &.my-message {
+        .detail-info {
+          .sign {
+            background: rgba(247, 181, 1, 0.5);
+            border-radius: rem(6px);
+            border: rem(2px) solid rgba(247, 181, 1, 1);
+            .icon {
+              width: rem(40px);
+              height: rem(39px);
+              background: url("../../assets/components/topic/message.png") no-repeat center center/contain;
+            }
+          }
+        }
+      }
+      &.praise-message {
+        .detail-info {
+          .sign {
+            background:rgba(255,165,165,0.5);
+            border-radius: rem(6px);
+            border:rem(2px) solid rgba(255,165,165,1);
+            .icon {
+              width: rem(44px);
+              height: rem(38px);
+              background: url("../../assets/components/topic/praise.png") no-repeat center center/cover;
+            }
+          }
+        }
+      }
+      &.leave-message {
+        .detail-info {
+          .sign {
+            background:rgba(98,53,255,0.5);
+            border-radius: rem(6px);
+            border:rem(2px) solid rgba(98,53,255,1);
+            .icon {
+              width: rem(40px);
+              height: rem(40px);
+              background: url("../../assets/components/topic/all_edit.png") no-repeat center center/cover;
+            }
+          }
+        }
+      }
+      &:nth-last-child(1){
+        border-bottom: rem(2px) solid rgba(237, 237, 237, 1);
+      }
+    }
+    margin-bottom: rem(20px);
+  }
+  .ml-system-message{
+    width:rem(750px);
+    background:rgba(255,255,255,1);
+    @include clearfix();
+    height: auto;
+    .system-item{
+      height:rem(232px);
+      width: rem(698px);
+      padding: rem(22px) rem(32px) rem(20px) rem(20px);
+      border-bottom: rem(2px) solid rgba(237, 237, 237, 1);
+      .message-logo{
+        width:88px;
+        height: 100%;
+        float: left;
+        margin-right: rem(18px);
+        .logo-type{
+          width:rem(88px);
+          height:rem(88px);
+          border-radius: 50%;
+          position: relative;
+          //overflow: hidden;
+          background:rgba(255,60,49,0.5);
+          border:rem(2px) solid rgba(255,60,49,1);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          .icon{
+            width: rem(40px);
+            height: rem(42px);
+            background: url("../../assets/components/topic/bell.png") no-repeat center center/cover;
+          }
+          .type-des{
+            font-style: normal;
+            width:rem(46px);
+            height:rem(18px);
+            position: absolute;
+            top: rem(-6px);
+            background: rgba(255,60,49,1);
+            right: rem(-10px);
+            font-size:rem(12px);
+            font-family:PingFangSC-Semibold;
+            text-align: center;
+            line-height: rem(18px);
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            border-radius: rem(4px);
+          }
+        }
+      }
+      .system-message-content{
+        margin-top: rem(48px);
+        float: right;
+        width:rem(552px);
+        height:rem(142px);
+        padding: rem(20px);
+        background:rgba(246,246,246,1);
+        border-radius:rem(12px);
+        position: relative;
+        .system-title{
+          width:rem(544px);
+          height:rem(94px);
+          font-size:rem(36px);
+          font-family:PingFangSC-Semibold;
+          font-weight:600;
+          color:#444;
+          line-height:rem(50px);
+          .system-sign{
+            color:rgba(255,60,49,1);
+            margin-right: rem(6px);
+          }
+        }
+        .message-time{
+          position: absolute;
+          bottom:rem(20px);
+          left: rem(20px);
+          height:rem(28px);
+          font-size:rem(20px);
+          font-family:PingFangSC-Light;
+          font-weight:300;
+          color:rgba(142,142,147,1);
+          line-height:rem(28px);
+        }
+        .slide{
+          height:rem(40px);
+          font-size:rem(28px);
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(153,153,153,1);
+          line-height:rem(40px);
+          letter-spacing:rem(1px);
+          bottom:rem(20px);
+          right: rem(20px);
+          position: absolute;
+        }
+      }
+    }
+  }
+
+}
+
