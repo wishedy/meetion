@@ -6,5 +6,35 @@
     "title": "心心相遇",
     "author": "张恒",
     "index": 0
+  },
+  "topic": {
+     "topic":{
+       "router": true,
+       "store": true,
+       "des": "心心相遇话题列表页",
+       "title": "心心相遇",
+       "author": "张恒",
+       "index": 1
+     }
+  },
+  "all_index": {
+    "all_index":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇首页全部",
+      "title": "心心相遇",
+      "author": "张恒",
+      "index": 1
+    }
+  },
+  "message": {
+    "message_index":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇消息首页",
+      "title": "首页",
+      "author": "张恒",
+      "index": 1
+    }
   }
 }

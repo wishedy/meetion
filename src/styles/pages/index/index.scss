@@ -2,6 +2,7 @@
 @import '../../modules/utilities/_utilities';
 body{
   background: #cfcfcf;
+  -webkit-overflow-scrolling : touch;
 }
 .ml-indexContent{
   margin-top: rem(84px);

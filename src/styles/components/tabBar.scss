@@ -63,10 +63,14 @@
         }
       }
       &.message{
-        background: url("../assets/components/tabBar/message-active.png") no-repeat center center/cover;
+        .icon{
+          background: url("../assets/components/tabBar/message-active.png") no-repeat center center/cover;
+        }
       }
       &.personal{
-        background: url("../assets/components/tabBar/personal-center-active.png") no-repeat center center/cover;
+        .icon{
+          background: url("../assets/components/tabBar/personal-center-active.png") no-repeat center center/cover;
+        }
       }
     }
   }
