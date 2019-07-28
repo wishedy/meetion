@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-        navIndex:0
+      navIndex: 0
     };
   },
   beforeMount() {

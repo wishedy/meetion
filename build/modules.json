@@ -36,5 +36,15 @@
       "author": "张恒",
       "index": 1
     }
+  },
+  "personal":{
+    "personal_index":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇个人首页",
+      "title": "首页",
+      "author": "张晓飞",
+      "index": 1
+    }
   }
 }
