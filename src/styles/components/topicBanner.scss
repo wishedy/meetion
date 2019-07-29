@@ -1,0 +1,33 @@
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+.ml-topic-banner{
+ width: rem(750px);
+  height: rem(474px);
+  background: url("https://webimg.quanjing.com/Recommend/1558459015894.jpg") no-repeat center center/cover;
+  position: relative;
+  .topic-title{
+    position: absolute;
+    bottom: rem(36px);
+    left: rem(24px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    span{
+      font-size:rem(52px);
+      line-height: rem(60px);
+      font-family:PingFangSC-Semibold;
+      font-weight:600;
+      color:rgba(255,60,49,1);
+    }
+    em{
+      font-style: normal;
+      font-size:rem(44px);
+      font-family:PingFangSC-Semibold;
+      font-weight:600;
+      color:rgba(255,255,255,1);
+      line-height:rem(60px);
+    }
+  }
+}
