@@ -1,0 +1,52 @@
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+.ml-add-comment{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width:rem(726px);
+  height:rem(62px);
+  background:rgba(255,255,255,1);
+  padding: rem(12px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  .ml-add-input{
+    width:rem(478px);
+    height:rem(44px);
+    line-height:rem(44px);
+    background:rgba(246,246,246,1);
+    border-radius:rem(12px);
+    padding: rem(10px) rem(20px);
+    font-size:rem(30px);
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+  }
+  .ml-add-praise{
+    width: rem(44px);
+    height: rem(44px);
+    background: url("../assets/components/dynamic/praise.png") no-repeat center center/cover;
+    margin-right: rem(28px);
+    margin-left: rem(20px);
+  }
+  .ml-add-review{
+    width: rem(48px);
+    height: rem(30px);
+    background: url("../assets/components/dynamic/eye.png") no-repeat center center/cover;
+    margin-right: rem(8px);
+  }
+  .ml-add-num{
+    width:rem(52px);
+    height:rem(40px);
+    font-size:rem(28px);
+    font-family:PingFangSC-Light;
+    font-weight:300;
+    color:rgba(142,142,147,1);
+    line-height:rem(40px);
+  }
+}

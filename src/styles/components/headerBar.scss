@@ -77,7 +77,7 @@
       .icon{
         width: rem(44px);
         height: rem(44px);
-        background: url("../assets/components/header/back.png") no-repeat center center/cover;
+        background: url("../assets/components/header/back.png") no-repeat center center/contain;
         display: inline-block;
       }
     }
