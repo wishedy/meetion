@@ -1,6 +1,14 @@
 <template>
     <section class="ml-mainInner">
         <HeaderModule :config="headerConfig"></HeaderModule>
+        <div class="loginBox">
+            <div class="login_top">
+                <span class="login_icon_set"></span>
+                <span class="login_icon_option"></span>
+                <img src="" alt="" class="login_userImg">
+                <span class="login_btn">立即登录</span>
+            </div>
+        </div>
         <Tab :nav="navIndex"></Tab>
     </section>
 </template>
