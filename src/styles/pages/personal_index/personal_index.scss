@@ -9,7 +9,8 @@ body{
   box-sizing: border-box;
   padding-top: rem(84px);
   padding-bottom: rem(98px);
-  background: #cccccc;
+  background: #F6F6F6;
+  position: relative;
 }
 .login_top {
   width: 100%;
@@ -58,4 +59,81 @@ body{
   text-align: center;
   border-radius: rem(12px);
   color: #FF8476;
+}
+.loginBox_header {
+  position: absolute;
+  top: rem(84px);
+  width: 100%;
+  height: rem(578px);
+}
+.login_main {
+  margin-top: rem(18px);
+  width: 100%;
+  height: rem(160px);
+  box-sizing: border-box;
+  padding: rem(38px) rem(62px) 0;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+.login_main_item {
+  display: flex;
+  width: rem(104px);
+  height: rem(98px);
+  background: #ffff;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_userInfo_icon {
+  display: inline-block;
+  width: rem(50px);
+  height: rem(50px);
+  background: #5d9cec;
+}
+.main_userInfo_text {
+  width: auto;
+  height: rem(36px);
+  line-height: rem(36px);
+  color: #666;
+  font-size: rem(26px);
+}
+.loginBox_footer {
+  width: 100%;
+  height: 100%;
+  padding-top: rem(578px);
+  box-sizing: border-box;
+  background: #f6f6f6;
+}
+.noLogin_img {
+  width: rem(350px);
+  height: rem(318px);
+  margin: rem(104px) auto 0;
+  background: #5d9cec;
+}
+.login_personalFlag {
+  width: 100%;
+  height: auto;
+  padding-top: rem(40px);
+  font-size: 0;
+  text-align: center;
+}
+.login_personalFlag_text {
+  display: inline-block;
+  width: auto;
+  height: rem(40px);
+  line-height: rem(40px);
+  color: #8E8E93;
+  font-size: rem(28px);
+}
+.loginBox_footer_btn {
+  width: rem(170px);
+  height: rem(62px);
+  margin: rem(30px) auto 0;
+  line-height: rem(62px);
+  background: #fff;
+  text-align: center;
+  font-size: rem(28px);
+  color: #444;
+  border-radius: rem(12px);
 }
