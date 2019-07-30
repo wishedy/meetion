@@ -26,10 +26,18 @@
        "author": "张恒",
        "index": 1
      },
+    "topic_detail":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇话题详情页",
+      "title": "心心相遇",
+      "author": "张恒",
+      "index": 1
+    },
     "topic_dynamic_detail":{
       "router": true,
       "store": true,
-      "des": "心心相遇话题动态页",
+      "des": "心心相遇话题动态详情页",
       "title": "心心相遇",
       "author": "张恒",
       "index": 1
