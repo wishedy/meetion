@@ -7,7 +7,7 @@ body{
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding-top: rem(84px);
+  //padding-top: rem(84px);
   padding-bottom: rem(98px);
   background: #F6F6F6;
   position: relative;
@@ -62,7 +62,7 @@ body{
 }
 .loginBox_header {
   position: absolute;
-  top: rem(84px);
+  //top: rem(84px);
   width: 100%;
   height: rem(578px);
 }
@@ -137,3 +137,188 @@ body{
   color: #444;
   border-radius: rem(12px);
 }
+// 登录弹窗
+.login_tip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #fff;
+  z-index: 5;
+  box-sizing: border-box;
+  padding: rem(64px) rem(54px) rem(20px) rem(56px) ;
+}
+.loginTip_title {
+  width: 100%;
+  height: rem(60px);
+  font-size: 0;
+  vertical-align: top;
+}
+.loginTip_iconLeft {
+  display: inline-block;
+  width: rem(24px);
+  height: rem(24px);
+  background: #FF7089;
+  margin-top: rem(24px);
+  margin-left: rem(8px);
+  vertical-align: top;
+}
+.loginTip_iconR {
+  display: inline-block;
+  width: rem(12px);
+  height: rem(12px);
+  background: #FF7089;
+  vertical-align: top;
+}
+.loginTip_title_text {
+  display: inline-block;
+  width: auto;
+  height: rem(60px);
+  line-height: rem(60px);
+  font-size: rem(44px);
+  color: #000;
+  font-weight:500;
+  vertical-align: top;
+}
+.loginTip_close {
+  display: inline-block;
+  width: rem(32px);
+  height: rem(30px);
+  background: #ccc;
+  float: right;
+  margin-top: rem(10px);
+  margin-right: rem(12px);
+  vertical-align: top;
+}
+.loginTip_img {
+  width: rem(632px);
+  height: rem(210px);
+  background: #FF8476;
+  margin: rem(12px) 0 rem(30px) rem(4px);
+}
+.loginInfo {
+  width: 100%;
+  height: auto;
+  padding: rem(18px) 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 0;
+  margin-bottom: rem(24px);
+}
+input::-webkit-input-placeholder {
+  color: #CECDCE;
+  font-size: rem(28px);
+  text-align: left;
+}
+.loginInfo_input {
+  display: inline-block;
+  width: rem(630px);
+  height: rem(40px);
+  border: none;
+  font-size: rem(28px);
+}
+.loginInfo_style {
+  width: 100%;
+  height: rem(40px);
+  font-size: 0;
+  vertical-align: top;
+}
+.loginInfo_styleTip, .loginInfo_styleTip2 {
+  display: inline-block;
+  width: auto;
+  height: rem(40px);
+  line-height: rem(40px);
+  font-size: rem(28px);
+  color: #8E8E93;
+  vertical-align: top;
+}
+.loginInfo_styleTip2 {
+  float: right;
+}
+.loginInfo_btn {
+  width: rem(630px);
+  height: rem(92px);
+  border-radius: rem(12px);
+  margin-top: rem(44px);
+  line-height: rem(92px);
+  text-align: center;
+  color: #fff;
+  font-size: rem(32px);
+  background: #FF8476;
+}
+.loginOther {
+  width: 100%;
+  height: auto;
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  bottom: rem(20px);
+}
+.loginOther_register {
+  width: 100%;
+  height: rem(40px);
+  line-height: rem(40px);
+  color: #FF8781;
+  text-align: center;
+  font-size: rem(28px);
+}
+.loginOther_three {
+  width: 100%;
+  height: rem(28px);
+  margin-top: rem(32px);
+  box-sizing: border-box;
+  padding: 0 rem(4px) 0 rem(58px);
+  font-size: 0;
+  vertical-align: top;
+}
+.loginOther_line {
+  display: inline-block;
+  width: rem(276px);
+  height: rem(2px);
+  background: #E7E7E7;
+  margin-top: rem(13px);
+  vertical-align: top;
+}
+.loginOther_loginThree {
+  display: inline-block;
+  width: auto;
+  height: rem(28px);
+  line-height: rem(28px);
+  margin-left: rem(10px);
+  font-size: rem(20px);
+  color: #8E8E93;
+}
+.loginOther_wx {
+  width: 100%;
+  height: rem(88px);
+  padding-top: rem(20px);
+  padding-bottom: rem(50px);
+  font-size: 0;
+  text-align: center;
+}
+.loginOther_wxImg {
+  display: inline-block;
+  width: rem(88px);
+  height: rem(88px);
+  background: green;
+}
+.loginOther_userRead {
+  width: 100%;
+  height: rem(28px);
+  font-size: 0;
+  text-align: center;
+  vertical-align: top;
+}
+.loginOther_readText, .loginOther_readNote {
+  display: inline-block;
+  width: auto;
+  height: rem(28px);
+  line-height: rem(28px);
+  vertical-align: top;
+  font-size: rem(20px);
+  font-weight:300;
+  color: #8E8E93;
+}
+.loginOther_readNote {
+  color: #3484FF;
+}
+
