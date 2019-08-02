@@ -1,12 +1,16 @@
 @import '../modules/utilities/_utilities';
 .ml-banner{
   height: rem(368px);
+  position: relative;
+  width: 100%;
   .content{
-    float: left;
+    //float: left;
+    position: absolute;
     width: rem(710px);
-    margin-top: rem(26px);
-    margin-left: rem(20px);
-    margin-right: rem(20px);
+    top: rem(26px);
+    left: rem(20px);
+    right: rem(20px);
+    z-index: 1;
     height:rem(328px);
     background:rgba(255,255,255,1);
     box-shadow:0px rem(4px) rem(20px) rem(-2px) rgba(0,0,0,0.07);
@@ -18,7 +22,7 @@
       overflow: hidden;
       margin: rem(20px) rem(20px) rem(14px) rem(20px);
       position: relative;
-      background: url("http://n.sinaimg.cn/news/transform/700/w1000h500/20190722/5e4c-iaantfi4892968.jpg") no-repeat center center/cover;
+      background: url("https://webimg.quanjing.com/Recommend/1558459015894.jpg") no-repeat center center/cover;
       .mask{
         position: absolute;
         top:0;
@@ -79,6 +83,7 @@
           letter-spacing:rem(1px);
         }
       }
+
     }
     .banner-detail{
       margin: 0 rem(40px) 0 rem(28px);
@@ -115,5 +120,15 @@
         }
       }
     }
+  }
+  .mask-bg{
+    width:rem(750px);
+    height:rem(256px);
+    background: #fff url("../assets/components/banner/bannerBg.png") no-repeat center center/cover;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 0;
   }
 }

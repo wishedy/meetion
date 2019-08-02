@@ -41,6 +41,14 @@
       "title": "心心相遇",
       "author": "张恒",
       "index": 1
+    },
+    "topic_dynamic_publish":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇话题动态发布页",
+      "title": "心心相遇",
+      "author": "张恒",
+      "index": 1
     }
   },
   "all_index": {

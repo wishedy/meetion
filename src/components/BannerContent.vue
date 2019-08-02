@@ -12,6 +12,7 @@
                         在一场漂泊大雨中，雨水湿透了身体，两个人就这样深情的望着对方，然后激情相拥热吻，然后牵起的你手朝向回家的路上…
                     </p>
                 </div>
+
             </section>
             <section class="banner-detail">
                 <div class="userList">
@@ -24,6 +25,7 @@
                 </div>
             </section>
         </section>
+        <div class="mask-bg"></div>
     </section>
 </template>
 <script>
