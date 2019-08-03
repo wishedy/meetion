@@ -1,0 +1,117 @@
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+.ml-personal-banner{
+  height: rem(334px);
+  width: rem(686px);
+  background:url("../assets/components/personal/personalBanner.png") no-repeat center center/cover;
+  padding: rem(32px);
+  &.login{
+    .login-container{
+      width: 100%;
+      margin-top: rem(26px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .default-logo{
+        width: rem(122px);
+        height: rem(122px);
+        background: #eeeeee;
+        border: rem(2px) solid #ffffff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: rem(22px);
+        .icon{
+          width: rem(62px);
+          height: rem(62px);
+          background: url("../assets/components/banner/personal_center.png") no-repeat center center/cover;
+        }
+      }
+      .login-btn{
+        width:rem(208px);
+        height:rem(58px);
+        background:rgba(255,255,255,1);
+        border-radius:rem(12px);
+        font-size:rem(28px);
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        text-align: center;
+        line-height: rem(58px);
+        color:rgba(255,64,53,1);
+      }
+    }
+    .user-info{
+      display: none;
+    }
+  }
+  .handle-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: rem(40px);
+    .set-icon{
+      width:rem(42px);
+      height:rem(40px);
+      background:url("../assets/components/banner/Set.png") no-repeat center center/cover;
+    }
+    .detail{
+      width:rem(38px);
+      height:rem(36px);
+      background:url("../assets/components/banner/list.png") no-repeat center center/cover;
+    }
+  }
+  &.loginSuccess{
+    .login-container{
+      display: none;
+    }
+    .user-info{
+      padding-left: rem(8px);
+      height: rem(108px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: rem(140px);
+      .user-logo{
+        width: rem(104px);
+        height: rem(104px);
+        border-radius: 50%;
+        background: url("https://webimg.quanjing.com/Recommend/1558459015894.jpg") no-repeat center center/cover;
+        border:rem(2px) solid #fff;
+        margin-right: rem(20px);
+      }
+      .user-detail{
+        height: rem(104px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        letter-spacing: rem(2px);
+        .user-name{
+          width:rem(398px);
+          height:rem(50px);
+          font-size:rem(36px);
+          font-family:PingFangSC-Semibold;
+          font-weight:600;
+          color:rgba(255,255,255,1);
+          line-height:rem(50px);
+          margin-bottom: rem(12px);
+        }
+        .love-word{
+          width:rem(418px);
+          height:rem(34px);
+          font-size:rem(24px);
+          font-family:PingFangSC-Light;
+          font-weight:300;
+          color:rgba(255,255,255,1);
+          line-height:rem(34px);
+        }
+      }
+    }
+  }
+
+}

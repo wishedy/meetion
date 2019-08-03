@@ -1,0 +1,16 @@
+@import '../modules/utilities/_utilities';
+.ml-audit-container{
+  background: #fff;
+  .ml-audit-warn{
+    width: 100%;
+    padding-top: rem(108px);
+    padding-bottom: rem(36px);
+    height:rem(36px);
+    font-size:rem(26px);
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(68,68,68,1);
+    line-height:rem(36px);
+    text-align: center;
+  }
+}

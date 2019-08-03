@@ -1,0 +1,59 @@
+@import '../modules/utilities/_utilities';
+.ml-comment-list{
+  margin-top: rem(28px);
+  height: auto;
+  @include clearfix();
+  .ml-comment-item{
+    @include clearfix();
+    height: auto;
+    margin-bottom: rem(28px);
+    .ml-comment-interflow{
+      width: rem(646px);
+      float: left;
+      background:rgba(246,246,246,1);
+      border-radius:rem(12px);
+      margin-top: rem(20px);
+      padding: rem(20px);
+      position: relative;
+      height: auto;
+      .more{
+        position: absolute;
+        right: rem(28px);
+        bottom:rem(20px);
+        @include clearfix();
+        span{
+          float: right;
+          margin-left: rem(8px);
+          width: rem(8px);
+          height: rem(8px);
+          background: #B2B2B2;
+          border-radius: 50%;
+        }
+      }
+      .interflow-item{
+        width:rem(590px);
+        height:auto;
+        font-size:rem(28px);
+        font-family:PingFangSC-Light;
+        font-weight:300;
+        color:#666666;
+        letter-spacing: rem(1px);
+        line-height:rem(40px);
+        margin-bottom: rem(20px);
+        .comment-user-name:nth-of-type(1){
+          margin-right:rem(10px);
+        }
+        .comment-user-name:nth-of-type(2){
+          margin: 0 rem(10px);
+        }
+        .my-name{
+          color: #F06361;
+        }
+        .your-name{
+          color: #8967FF;
+        }
+      }
+    }
+  }
+
+}

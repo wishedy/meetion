@@ -1,0 +1,57 @@
+@import '../modules/utilities/_utilities';
+.ml-select-dialog{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background: rgba(0,0,0,.5);
+  z-index: 3;
+  .center-content{
+    width:rem(568px);
+    height:rem(756px);
+    background:rgba(255,255,255,1);
+    box-shadow:0px rem(4px) rem(20px) rem(-2px) rgba(0,0,0,0.07);
+    border-radius:rem(12px);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-left: rem(-284px);
+    margin-top: rem(-378px);
+    .title{
+      width:rem(568px);
+      height:rem(108px);
+      background:rgba(255,102,90,1);
+      border-radius:rem(12px) rem(12px) 0px 0px;
+      font-size:rem(36px);
+      line-height: rem(108px);
+      text-align: center;
+      font-family:PingFangSC-Medium;
+      font-weight:500;
+      color:rgba(255,255,255,1);
+    }
+    .select-list{
+      height: rem(648px);
+      padding: rem(48px) 0 rem(36px) 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      .select-btn{
+        width:rem(332px);
+        height:rem(74px);
+        border-radius:rem(12px);
+        border:rem(2px) solid rgba(255,102,90,1);
+        line-height: rem(74px);
+        font-size:rem(28px);
+        font-family:PingFangSC-Light;
+        font-weight:300;
+        text-align: center;
+        margin-bottom: rem(20px);
+        color:rgba(255,102,90,1);
+      }
+    }
+  }
+}

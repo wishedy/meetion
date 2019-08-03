@@ -1,0 +1,120 @@
+@import '../modules/utilities/_utilities';
+.ml-leave-message{
+  .leave-message-item{
+    margin-bottom: rem(20px);
+    padding: rem(38px) rem(32px) rem(28px) rem(32px);
+    background: #fff;
+    height: auto;
+    .message-author{
+      height: rem(74px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      margin-bottom: rem(28px);
+      .feedBack{
+        width:rem(154px);
+        height:rem(54px);
+        background:rgba(246,246,246,1);
+        border-radius:rem(33px);
+        position: absolute;
+        right: 0;
+        top:50%;
+        margin-top: rem(-27px);
+        font-size:rem(28px);
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        letter-spacing: rem(2px);
+        -webkit-text-stroke:2px rgba(89,126,247,1);
+        text-stroke:2px rgba(89,126,247,1);
+        text-align: center;
+        line-height: rem(54px);
+        color:rgba(47,84,235,1)
+      }
+      .user-logo{
+        width:rem(74px);
+        height:rem(74px);
+        margin-right: rem(6px);
+        background: url("https://dpic2.tiankong.com/lt/9v/QJ6170661618.jpg?x-oss-process=style/240h") no-repeat center center/cover;
+        border-radius: 50%;
+      }
+      .user-detail{
+        height:rem(74px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .user-name{
+          height:rem(44px);
+          font-size:rem(32px);
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          color:rgba(240,99,97,1);
+          line-height:rem(44px);
+          margin-bottom: rem(6px);
+        }
+        .message-time{
+          font-size:rem(20px);
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          height:rem(36px);
+          color:rgba(153,153,153,1);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          em{
+            font-style: normal;
+          }
+          .icon{
+            width:rem(18px);
+            height:rem(18px);
+            margin-right: rem(12px);
+            background: url("../../../assets/components/dynamic/clock.png") no-repeat center center/cover;
+          }
+          .date{
+            margin-right: rem(14px);
+          }
+        }
+
+      }
+    }
+    .message-content{
+      padding: 0 rem(32px);
+      min-height:rem(40px);
+      font-size:rem(28px);
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      letter-spacing: rem(2px);
+      color:rgba(102,102,102,1);
+      line-height:rem(40px);
+      margin-bottom: rem(20px);
+    }
+    .message-feedBack{
+      width: rem(674px);
+      padding-left: rem(12px);
+      line-height: rem(64px);
+      text-align: left;
+      font-size:rem(28px);
+      font-family:PingFangSC-Light;
+      font-weight:300;
+      color:rgba(142,142,147,1);
+      background:rgba(246,246,246,1);
+      border-radius:rem(12px);
+    }
+  }
+  .ml-comment-more{
+    height:rem(36px);
+    font-size:rem(26px);
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(176,176,176,1);
+    line-height:rem(36px);
+    text-align: center;
+    padding-top: rem(48px);
+    padding-bottom: rem(48px);
+    width: 100%;
+    background: #fff;
+  }
+}
