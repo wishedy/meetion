@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+body{
+  background: #f6f6f6;
+}
+.ml-set-center{
+  margin-top: rem(104px);
+  background: #fff;
+  margin-bottom: rem(42px);
+
+}

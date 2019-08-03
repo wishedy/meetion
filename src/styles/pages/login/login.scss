@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+body{
+  background: #ffffff;
+}
+.ml-mainInner{
+  background: #ffffff;
+}
+.ml-login-title{
+  height: rem(60px);
+  padding:rem(60px) rem(58px) rem(12px) rem(60px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: rem(28px);
+  .title{
+    width:rem(180px);
+    height:rem(60px);
+    font-size:rem(44px);
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(0,0,0,1);
+    line-height:rem(60px);
+    position: relative;
+    &:after{
+      content: " ";
+      display: block;
+      background: url("../../assets/components/login/plusA.png") no-repeat center center/cover;
+      position: absolute;
+      width:rem(24px);
+      height:rem(24px);
+      color: rgba(50,211,174,1);
+      left: rem(-28px);
+      top:rem(24px);
+    }
+    &:before{
+      content: " ";
+      display: block;
+      background: url("../../assets/components/login/plusB.png") no-repeat center center/cover;
+      position: absolute;
+      width:rem(12px);
+      height:rem(12px);
+      color: rgba(50,211,174,1);
+      right: rem(-12px);
+      top:rem(10px);
+    }
+  }
+  .close-btn{
+    width:rem(32px);
+    height:rem(30px);
+    background: url("../../assets/components/login/closeIcon.png") no-repeat center center/cover;
+  }
+}
+.ml-slogan-container{
+  margin:0 rem(58px) rem(8px) rem(60px);
+}
+.ml-form-phone{
+  margin:0 rem(64px) 0 rem(56px);
+}
+.ml-open-metion{
+  margin:rem(44px) rem(64px) 0 rem(56px);
+  width:rem(630px);
+  height:rem(92px);
+  background:rgba(255,123,110,1);
+  border-radius:rem(12px);
+  font-size:rem(32px);
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:rem(92px);
+  text-align: center;
+  opacity:.7;
+  &.active{
+    opacity:1;
+  }
+
+}
+.ml-authorization{
+    margin: 0 rem(58px);
+    position: fixed;
+    bottom:0;
+    height: rem(306px);
+  width: rem(630px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  .register{
+    height:rem(40px);
+    font-size:rem(28px);
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,135,129,1);
+    line-height:rem(40px);
+    text-align: center;
+    margin-bottom: rem(32px);
+  }
+  .third-line{
+    height:rem(28px);
+    font-size:rem(20px);
+    font-family:PingFangSC-Light;
+    font-weight:300;
+    color:rgba(142,142,147,1);
+    line-height:rem(28px);
+    text-align: center;
+    width:rem(62px);
+    position: relative;
+    margin-bottom: rem(20px);
+    &:after{
+      content: " ";
+      position: absolute;
+      width:rem(276px);
+      height:rem(2px);
+      background: #e7e7e7;
+      left: rem(-296px);
+      top:50%;
+      margin-top: rem(-1px);
+    }
+    &:before{
+      content: " ";
+      position: absolute;
+      width:rem(276px);
+      height:rem(2px);
+      background: #e7e7e7;
+      right: rem(-296px);
+      top:50%;
+      margin-top: rem(-1px);
+    }
+  }
+  .third-logo{
+    width:rem(88px);
+    height:rem(88px);
+    background:rgba(80,182,116,1);
+    background: url("../../assets/components/login/weChatLogin.png") no-repeat center center/cover;
+    margin-bottom: rem(50px);
+  }
+  .userAgreement{
+    width:rem(272px);
+    height:rem(28px);
+    font-size:rem(20px);
+    font-family:PingFangSC-Light;
+    font-weight:300;
+    color:rgba(142,142,147,1);
+    line-height:rem(28px);
+    text-align: center;
+    em{
+      color: #3484FF;
+      font-style: normal;
+    }
+  }
+}
