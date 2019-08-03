@@ -79,6 +79,14 @@
       "title": "首页",
       "author": "张晓飞",
       "index": 1
+    },
+    "set_center":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇设置中心",
+      "title": "设置",
+      "author": "张恒",
+      "index": 1
     }
   },
   "passport":{
