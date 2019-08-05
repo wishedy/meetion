@@ -7,6 +7,9 @@ import WantSpeak from '../components/WantSpeak';
 import FamilyCondition from '../components/FamilyCondition';
 import EditLogo from '../components/EditLogo';
 import Photo from '../components/PersonalPhoto';
+import InterestsPage from '../components/InterestsPage';
+import EditImagePage from '../components/EditImagePage';
+import FeedBack from '../components/FeedBack';
 export default {
   routes: [
     {
@@ -57,6 +60,21 @@ export default {
       path: '/base',
       name: 'base',
       component: BaseInfoPage
+    },
+    {
+      path: '/feedBack',
+      name: 'feedBack',
+      component: FeedBack
+    },
+    {
+      path: '/image',
+      name: 'image',
+      component: EditImagePage
+    },
+    {
+      path: '/interest',
+      name: 'interest',
+      component: InterestsPage
     }
   ]
 };

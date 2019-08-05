@@ -4,11 +4,11 @@
             <PersonalBanner></PersonalBanner>
             <TabBar></TabBar>
             <!--<BaseInfo></BaseInfo>-->
-            <!--<AuditInfo></AuditInfo>-->
+            <AuditInfo></AuditInfo>
             <!--<DynamicInfo></DynamicInfo>-->
             <!--<LeaveMessage></LeaveMessage>-->
             <!--<UserState></UserState>-->
-            <NoneData></NoneData>
+            <!--<NoneData></NoneData>-->
         </div>
         <Tab :nav="navIndex"></Tab>
         <EditBar></EditBar>

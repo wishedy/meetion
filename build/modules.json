@@ -7,6 +7,24 @@
     "author": "张恒",
     "index": 0
   },
+  "publish_dynamic":{
+    "publish_normal_dynamic":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇发布普通动态页",
+      "title": "发布普通动态",
+      "author": "张恒",
+      "index": 1
+    },
+    "publish_alone_dynamic":{
+      "router": true,
+      "store": true,
+      "des": "心心相遇发布脱单动态页",
+      "title": "发布脱单动态",
+      "author": "张恒",
+      "index": 1
+    }
+  },
   "dynamic_detail":{
     "dynamic_detail":{
       "router": true,

@@ -20,7 +20,7 @@ export default {
     .ml-cancalBtn{
         width:rem(652px);
         height:rem(80px);
-        background:rgba(246,246,246,1);
+        background:#fff;
         border-radius:rem(12px);
         line-height: rem(84px);
         text-align: center;
