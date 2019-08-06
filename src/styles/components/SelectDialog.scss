@@ -11,7 +11,7 @@
   z-index: 3;
   .center-content{
     width:rem(568px);
-    height:rem(756px);
+    height:auto;
     background:rgba(255,255,255,1);
     box-shadow:0px rem(4px) rem(20px) rem(-2px) rgba(0,0,0,0.07);
     border-radius:rem(12px);
@@ -33,7 +33,7 @@
       color:rgba(255,255,255,1);
     }
     .select-list{
-      height: rem(648px);
+      height: auto;
       padding: rem(48px) 0 rem(36px) 0;
       display: flex;
       align-items: center;

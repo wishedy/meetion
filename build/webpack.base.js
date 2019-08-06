@@ -21,10 +21,10 @@ config.HTMLDirs.forEach(item => {
 
 const env = process.env.BUILD_MODE.trim();
 let ASSET_PATH = '/'; // dev 环境
-if (env === 'prod') ASSET_PATH = '//abc.com/static/'; // build 时设置成实际使用的静态服务地址
+if (env === 'prod') ASSET_PATH = '/'; // build 时设置成实际使用的静态服务地址
 let createEntryModule = ()=>{
   let resultJson = {};
-  if(process.env.BUILD_MODULE_NAME!=='index'){
+  if((process.env.BUILD_MODULE_NAME!=='index')&&(env === 'dev')){
     let EntryName = process.env.BUILD_MODULE_NAME;
     resultJson[EntryName] = Entries[EntryName];
   }else{
@@ -56,6 +56,7 @@ module.exports = {
     alias: {
       '@components': path.resolve(__dirname, '../src/components'),
       '@styles': path.resolve(__dirname, '../src/styles'),
+      '@scripts': path.resolve(__dirname, '../src/scripts'),
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@commons': path.resolve(__dirname, '../src/commons'),
       '@mixins': path.resolve(__dirname, '../src/pages/page.js'),

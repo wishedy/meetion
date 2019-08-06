@@ -1,9 +1,23 @@
 <template>
-    <section class="ml-publish"></section>
+    <section class="ml-publish" @click.stop="jumpPage"></section>
 </template>
 <script>
+import Common from '@scripts/lib/common.js';
 export default {
-
+  props: {
+    linkUrl: {
+      default() {
+        return '/publish_dynamic/publish_normal_dynamic.html';
+      },
+      type: String
+    }
+  },
+  methods: {
+    jumpPage() {
+      const _this = this;
+      Common.jumpUrl(_this.linkUrl);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

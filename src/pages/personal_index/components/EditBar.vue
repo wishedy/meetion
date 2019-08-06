@@ -1,8 +1,20 @@
 <template>
-    <section class="sign">
+    <section class="sign" @click.stop="showEditPanel">
         <i class="icon"></i>
     </section>
 </template>
+<script>
+import { mapActions } from 'vuex';
+export default {
+  methods: {
+    ...mapActions(['editPanel']),
+    showEditPanel() {
+      const _this = this;
+      _this.editPanel(true);
+    }
+  }
+};
+</script>
 <style lang="scss" scoped>
     @function rem($px, $base-font-size: 75px) {
         @return ($px / $base-font-size) * 1rem;

@@ -1,6 +1,7 @@
 
 const state = {
-  num: 0
+  tabIndex: 0,
+  editPanelOnOff: false
 };
 
 export default state;

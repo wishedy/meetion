@@ -1,6 +1,6 @@
 <template>
 <section class="ml-header-module">
-    <span class="header-item">
+    <span class="header-item" @click.stop="reBack">
         <i class="icon" v-if="config.backOnOff"></i>
     </span>
     <span class="header-item" v-text="config.title"></span>
@@ -18,6 +18,11 @@ export default {
         };
       },
       type: Object
+    }
+  },
+  methods: {
+    reBack() {
+      window.history.back();
     }
   }
 };

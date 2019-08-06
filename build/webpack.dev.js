@@ -25,8 +25,11 @@ module.exports = webpackMerge(webpackBase, {
         exclude: /node_modules/,
         use: [
           'vue-style-loader',
+            'vue-loader',
           'css-loader',
           'postcss-loader',
+            'url-loader',
+            'style-loader'
         ]
       },
       {

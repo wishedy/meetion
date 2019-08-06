@@ -1,26 +1,32 @@
 <template>
     <section class="ml-personal-tab">
-        <section class="tab-item base-info active">
+        <section class="tab-item base-info" :class="{'active':tabIndex===0}" @click.stop="changeTab(0)">
             <i class="icon"></i>
             <em>基本资料</em>
         </section>
-        <section class="tab-item audit">
+        <section class="tab-item audit" :class="{'active':tabIndex===1}" @click.stop="changeTab(1)">
             <i class="icon"></i>
             <em>审核信息</em>
         </section>
-        <section class="tab-item publish">
+        <section class="tab-item publish" :class="{'active':tabIndex===2}" @click.stop="changeTab(2)">
             <i class="icon"></i>
             <em>个人发布</em>
         </section>
-        <section class="tab-item message">
+        <section class="tab-item message" :class="{'active':tabIndex===3}" @click.stop="changeTab(3)">
             <i class="icon"></i>
             <em>我的留言</em>
         </section>
     </section>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
 export default {
-
+  computed: {
+    ...mapGetters(['tabIndex'])
+  },
+  methods: {
+    ...mapActions(['changeTab'])
+  }
 };
 </script>
 <style lang="scss" scoped>

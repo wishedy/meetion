@@ -1,8 +1,8 @@
 <template>
     <section class="ml-personal-banner loginSuccess"><!--login-->
         <div class="handle-bar">
-            <span class="set-icon"></span>
-            <span class="detail"></span>
+            <span class="set-icon" @click.stop="jumpPage(0)"></span>
+            <span class="detail" @click.stop="jumpPage(1)"></span>
         </div>
         <div class="login-container">
             <section class="default-logo">
@@ -20,8 +20,25 @@
     </section>
 </template>
 <script>
+import Common from '@scripts/lib/common.js';
 export default {
-
+  methods: {
+    jumpPage(index) {
+      let pageUrl = '';
+      console.log(index);
+      switch (parseInt(index, 10)) {
+        case 0:
+          pageUrl = '/personal/set_center.html';
+          break;
+        case 1:
+          pageUrl = '/personal/personal_index.html#/card';
+          break;
+        default:
+          break;
+      }
+      Common.jumpUrl(pageUrl);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

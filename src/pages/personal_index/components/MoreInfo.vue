@@ -24,5 +24,6 @@ export default {
     }
     .ml-moreInfo{
         background: #fff;
+        margin-bottom: rem(118px);
     }
 </style>
