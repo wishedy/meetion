@@ -90,6 +90,15 @@ module.exports = webpackMerge(webpackBase, {
       errors: true,
       warnings: true,
     },
+    proxy:{
+      '/api': {
+        target: 'http://47.94.193.122:8780',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      }
+    },
     port: 8090,
     open: true // 服务启动后 打开浏览器
   }
