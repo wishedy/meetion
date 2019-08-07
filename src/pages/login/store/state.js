@@ -1,6 +1,9 @@
 
 const state = {
-  num: 0
+  residueNum: 5,
+  onCoding: false,
+  phoneNum: '',
+  codeNum: ''
 };
 
 export default state;

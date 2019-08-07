@@ -5,13 +5,27 @@
             <em class="icon"></em>
         </div>
         <figure class="ml-input-bar">
-            <input type="text" class="ml-input-item" placeholder="请输入您的手机号">
+            <input type="text" class="ml-input-item" placeholder="请输入您的手机号" v-model="phoneNum">
         </figure>
     </section>
 </template>
 <script>
+import { mapActions } from 'vuex';
 export default {
-
+  data() {
+    return {
+      phoneNum: ''
+    };
+  },
+  methods: {
+    ...mapActions(['setPhoneNum'])
+  },
+  watch: {
+    phoneNum(n) {
+      const _this = this;
+      _this.setPhoneNum(n);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -51,7 +65,7 @@ export default {
         }
         .ml-input-bar{
             width: auto;
-            min-width: rem(500px);
+            min-width: rem(400px);
             height:rem(40px);
             font-size:rem(28px);
             font-family:PingFangSC-Light;
@@ -68,6 +82,11 @@ export default {
                 border:none;
                 width: 100%;
                 height: 100%;
+                font-size:rem(28px);
+                font-family:PingFangSC-Light;
+                font-weight:300;
+                color:rgba(68,68,68,1);
+                text-align: right;
                 &::-webkit-input-placeholder { /* WebKit browsers */
                     font-size:rem(28px);
                     font-family:PingFangSC-Light;

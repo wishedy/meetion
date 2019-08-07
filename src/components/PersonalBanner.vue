@@ -1,5 +1,5 @@
 <template>
-    <section class="ml-personal-banner loginSuccess"><!--login-->
+    <section class="ml-personal-banner" :class="{'loginSuccess':loginOnOff,'login':!loginOnOff}">
         <div class="handle-bar">
             <span class="set-icon" @click.stop="jumpPage(0)"></span>
             <span class="detail" @click.stop="jumpPage(1)"></span>
@@ -8,7 +8,7 @@
             <section class="default-logo">
                 <i class="icon"></i>
             </section>
-            <section class="login-btn">立即登录</section>
+            <section class="login-btn" @click.stop="jumpPage(2)">立即登录</section>
         </div>
         <section class="user-info">
             <figure class="user-logo"></figure>
@@ -22,6 +22,12 @@
 <script>
 import Common from '@scripts/lib/common.js';
 export default {
+  data() {
+    const loginOnOff = !Common.checkInvalid(localStorage.getItem('customerId'));
+    return {
+      loginOnOff: loginOnOff
+    };
+  },
   methods: {
     jumpPage(index) {
       let pageUrl = '';
@@ -32,6 +38,9 @@ export default {
           break;
         case 1:
           pageUrl = '/personal/personal_index.html#/card';
+          break;
+        case 2:
+          pageUrl = '/passport/login.html';
           break;
         default:
           break;
