@@ -2,7 +2,7 @@
     <section class="ml-editInput">
         <span class="label-name" v-text="txt"></span>
         <figure class="input-bar">
-            <input type="text" :placeholder="placeText">
+            <input type="text" :placeholder="placeText" v-model="contentTxt">
         </figure>
     </section>
 </template>
@@ -21,7 +21,18 @@ export default {
       }
     },
     type: String
-  }
+  },
+    watch:{
+        contentTxt(n){
+            let _this = this;
+            _this.$emit("onTxtChange",n);
+        }
+    },
+    data(){
+      return {
+          contentTxt:""
+      }
+    }
 };
 </script>
 <style lang="scss" scoped>

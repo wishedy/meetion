@@ -2,7 +2,7 @@
     <section class="ml-editText">
         <section class="label-name" v-text="txt"></section>
         <figure class="text-container">
-            <textarea name="" id="" cols="30" rows="10" :placeholder="placeText"></textarea>
+            <textarea name="" id="" cols="30" rows="10" :placeholder="placeText" v-model="contentTxt"></textarea>
         </figure>
     </section>
 </template>
@@ -21,7 +21,18 @@ export default {
       },
       type: String
     }
-  }
+  },
+    watch:{
+        contentTxt(n){
+            let _this = this;
+            _this.$emit("onTxtChange",n);
+        }
+    },
+    data(){
+      return {
+          contentTxt:""
+      }
+    }
 };
 </script>
 <style lang="scss" scoped>

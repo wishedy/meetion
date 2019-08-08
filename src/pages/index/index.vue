@@ -34,18 +34,7 @@ export default {
 
   },
   mounted() {
-    axios.get('/api/customer/login', {
-      params: {
-        phone: 13633950303,
-        smsCode: 1111
-      }
-    })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+
   },
   watch: {
 

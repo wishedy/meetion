@@ -2,11 +2,11 @@
     <section class="ml-family-page">
         <HeaderModule :config="headerConfig"></HeaderModule>
         <section class="family-list">
-            <EditTextBar txt="家庭成员" placeText="请输入您的家庭情况（例如：父母健在、有一个哥哥）"></EditTextBar>
-            <EditTextBar txt="父母职业" placeText="请输入您父母的情况（例如：务农、在职）"></EditTextBar>
-            <EditTextBar txt="主要经济来源" placeText="请输入您的主要经济来源（例如：父母做生意、本人在岗工作）"></EditTextBar>
+            <EditTextBar txt="家庭成员" placeText="请输入您的家庭情况（例如：父母健在、有一个哥哥）" @onTxtChange="changeMember"></EditTextBar>
+            <EditTextBar txt="父母职业" placeText="请输入您父母的情况（例如：务农、在职）" @onTxtChange="changeParentsWork"></EditTextBar>
+            <EditTextBar txt="主要经济来源" placeText="请输入您的主要经济来源（例如：父母做生意、本人在岗工作）" @onTxtChange="changeFamilyIncome"></EditTextBar>
         </section>
-        <SureBtn txt="保存" class="save-btn"></SureBtn>
+        <SureBtn txt="保存" class="save-btn" @click.native="saveInfo"></SureBtn>
         <CancelBtn txt="取消"></CancelBtn>
 
     </section>
@@ -28,9 +28,47 @@ export default {
       headerConfig: {
         backOnOff: true,
         title: '家庭情况'
-      }
+      },
+        circumstance:"",
+        parentsWork:"",
+        familyIncome:"",
+        editCircumstance:"",
+        editParentsWork:"",
+        editFamilyIncome:""
     };
-  }
+  },
+    methods:{
+        changeMember(txt){
+            let _this = this;
+            _this.editCircumstance = txt;
+
+        },
+        changeParentsWork(txt){
+            let _this = this;
+            _this.editParentsWork = txt;
+
+        },
+        changeFamilyIncome(txt){
+            let _this = this;
+            _this.editFamilyIncome = txt;
+
+        },
+        saveInfo(){
+            let _this = this;
+            axios.post('/api/family/update', {
+                id: _this.cid,
+                circumstance: _this.editCircumstance,
+                parentsWork:_this.editParentsWork,
+                familyIncome:_this.editFamilyIncome
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    }
 };
 </script>
 <style lang="scss" scoped>

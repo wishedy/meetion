@@ -3,7 +3,7 @@ const state = {
   tabIndex: 0,
   editPanelOnOff: false,
   linkInfo: {
-    tencentNum: '',
+    qqNum: '',
     weChatNum: '',
     phoneNum: '',
     email: '',

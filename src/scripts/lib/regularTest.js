@@ -11,6 +11,9 @@ class regularTest {
         _this.decimals = _this.decimals.bind(_this);
         _this.minus = _this.minus.bind(_this);
     }
+    testWeChat(val){
+        return /^[a-zA-Z]([-_a-zA-Z0-9]{5,19})+$/.test(val);
+    }
     testNum(val){
         //判断数字
         return (/^\d+$/g).test(val);
