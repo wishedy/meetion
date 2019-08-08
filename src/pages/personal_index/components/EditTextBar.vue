@@ -7,6 +7,7 @@
     </section>
 </template>
 <script>
+import Common from '@scripts/lib/common.js';
 export default {
   props: {
     txt: {
@@ -22,17 +23,22 @@ export default {
       type: String
     }
   },
-    watch:{
-        contentTxt(n){
-            let _this = this;
-            _this.$emit("onTxtChange",n);
-        }
-    },
-    data(){
-      return {
-          contentTxt:""
-      }
+  mounted() {
+    const _this = this;
+    console.log(_this.txtContent + '------');
+    _this.contentTxt = Common.nullString(_this.txtContent);
+  },
+  watch: {
+    contentTxt(n) {
+      const _this = this;
+      _this.$emit('onTxtChange', n);
     }
+  },
+  data() {
+    return {
+      contentTxt: ''
+    };
+  }
 };
 </script>
 <style lang="scss" scoped>

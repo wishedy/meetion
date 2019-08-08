@@ -57,6 +57,7 @@ module.exports = {
       '@components': path.resolve(__dirname, '../src/components'),
       '@styles': path.resolve(__dirname, '../src/styles'),
       '@scripts': path.resolve(__dirname, '../src/scripts'),
+      '@plugins': path.resolve(__dirname, '../src/plugins'),
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@commons': path.resolve(__dirname, '../src/commons'),
       '@mixins': path.resolve(__dirname, '../src/pages/page.js'),

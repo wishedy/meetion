@@ -7,9 +7,16 @@
     </section>
 </template>
 <script>
+import Common from '@scripts/lib/common.js';
 export default {
   props: {
     txt: {
+      default() {
+        return '';
+      },
+      type: String
+    },
+    txtContent: {
       default() {
         return '';
       },
@@ -22,17 +29,22 @@ export default {
     },
     type: String
   },
-    watch:{
-        contentTxt(n){
-            let _this = this;
-            _this.$emit("onTxtChange",n);
-        }
-    },
-    data(){
-      return {
-          contentTxt:""
-      }
+  watch: {
+    contentTxt(n) {
+      const _this = this;
+      _this.$emit('onTxtChange', n);
     }
+  },
+  mounted() {
+    const _this = this;
+    console.log(_this.txtContent + '------');
+    _this.contentTxt = Common.nullString(_this.txtContent);
+  },
+  data() {
+    return {
+      contentTxt: ''
+    };
+  }
 };
 </script>
 <style lang="scss" scoped>

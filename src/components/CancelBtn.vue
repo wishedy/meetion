@@ -1,5 +1,5 @@
 <template>
-    <section class="ml-cancalBtn" v-text="txt"></section>
+    <section class="ml-cancalBtn" v-text="txt" @click.stop="reBack"></section>
 </template>
 <script>
 export default {
@@ -9,6 +9,11 @@ export default {
         return '';
       },
       type: String
+    }
+  },
+  methods: {
+    reBack() {
+      window.history.back();
     }
   }
 };

@@ -13,6 +13,14 @@ class Common {
             window.location.href = url;
         }
     }
+    nullString(val){
+        let _this = this;
+        if(_this.checkInvalid(val)){
+            return '';
+        }else{
+            return val;
+        }
+    }
     checkInvalid(val){
         if(((typeof val =='string')&&(val.length==0))||(val==undefined)||(val=='undefined')||(val=='null')||(typeof val=='undefined')||(typeof val=='null')||(val==null)){
             return true;
