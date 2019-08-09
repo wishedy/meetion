@@ -1,0 +1,73 @@
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+.ml-mainInner{
+  .ml-picker{
+    .picker-wheel-wrapper .wheel-scroll .wheel-item{
+      height: rem(68px);
+      line-height: rem(68px);
+      font-size: rem(34px);
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #333;
+    }
+    .picker-title span {
+      position: absolute;
+      height: rem(88px);
+      line-height: rem(88px);
+      padding: 0 rem(24px);
+      font-size: rem(28px);
+    }
+    .picker-title h4 {
+      margin: 0;
+      font-size: rem(32px);
+      font-weight: 400;
+      height: rem(88px);
+      line-height: rem(88px);
+      text-align: center;
+    }
+    .picker {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: rem(540px);
+      z-index: 10000;
+      background: #fff;
+    }
+    .picker-panel {
+      position: relative;
+      height: rem(452px);
+      padding: rem(48px) rem(24px);
+      box-sizing: border-box;
+    }
+    .picker-panel .picker-mask-top[data-v-171df494] {
+      top: rem(48px);
+      background: linear-gradient(180deg,hsla(0,0%,100%,.9),hsla(0,0%,100%,.5));
+    }
+    .picker-panel .picker-mask-bottom, .picker-panel .picker-mask-top {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: rem(144px);
+      background: #fff;
+      transform: translateZ(0);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .picker-panel .picker-mask-bottom {
+      bottom: rem(48px);
+      background: linear-gradient(0deg,hsla(0,0%,100%,.9),hsla(0,0%,100%,.5));
+    }
+    .picker-wheel-wrapper .wheel-scroll {
+      margin-top: rem(144px);
+    }
+    .picker-title {
+      position: relative;
+      height: rem(88px);
+      color: #333;
+    }
+  }
+}

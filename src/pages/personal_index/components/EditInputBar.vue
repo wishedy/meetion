@@ -33,6 +33,11 @@ export default {
     contentTxt(n) {
       const _this = this;
       _this.$emit('onTxtChange', n);
+    },
+    txtContent(n) {
+      console.log('有变化');
+      const _this = this;
+      _this.contentTxt = Common.nullString(n);
     }
   },
   mounted() {

@@ -8,7 +8,6 @@
         </section>
         <SureBtn txt="保存" class="save-btn" @click.native="saveInfo"></SureBtn>
         <CancelBtn txt="取消"></CancelBtn>
-
     </section>
 </template>
 <script>
@@ -26,11 +25,14 @@ export default {
     CancelBtn
   },
   data() {
+    const cid = localStorage.getItem('customerId');
     return {
       headerConfig: {
         backOnOff: true,
         title: '家庭情况'
       },
+      cid: cid,
+      infoId: '',
       circumstance: '',
       parentsWork: '',
       familyIncome: '',
@@ -38,6 +40,10 @@ export default {
       editParentsWork: '',
       editFamilyIncome: ''
     };
+  },
+  mounted() {
+    const _this = this;
+    _this.getInfo();
   },
   methods: {
     changeMember(txt) {
@@ -63,6 +69,7 @@ export default {
           console.log(response);
           if (parseInt(response.data.code, 10) === 200) {
             _this.circumstance = Common.nullString(response.data.result.circumstance);
+            _this.infoId = response.data.result.id;
             _this.parentsWork = Common.nullString(response.data.result.parentsWork);
             _this.familyIncome = Common.nullString(response.data.result.familyIncome);
           }
@@ -77,7 +84,7 @@ export default {
     saveInfo() {
       const _this = this;
       axios.post('/api/family/update', {
-        id: _this.cid,
+        id: _this.infoId,
         circumstance: _this.editCircumstance,
         parentsWork: _this.editParentsWork,
         familyIncome: _this.editFamilyIncome

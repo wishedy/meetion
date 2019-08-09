@@ -37,6 +37,7 @@ export default {
         title: '联系方式'
       },
       cid: cid,
+      linkPageId: '',
       qqNum: '',
       weChatNum: '',
       phoneNum: '',
@@ -75,6 +76,7 @@ export default {
             _this.weChatNum = Common.nullString(response.data.result.wechatAccount);
             _this.phoneNum = Common.nullString(response.data.result.wechatAccount);
             _this.email = Common.nullString(response.data.result.email);
+            _this.linkPageId = response.data.result.id;
             _this.qqNum = Common.nullString(response.data.result.qqAccount);
             _this.otherNum = Common.nullString(response.data.result.otherAccount);
             console.log(_this.otherNum);
@@ -117,10 +119,10 @@ export default {
       if (!Common.checkInvalid(_this.editOtherNum)) { // email号非空
 
       }
-      if (checkOnOff) {
+      if (checkOnOff && (!Common.checkInvalid(_this.linkPageId))) {
         // 通过校验，提交信息
         axios.post('/api/contact/update', {
-          id: _this.cid,
+          id: _this.linkPageId,
           wechatAccount: _this.editWeChatNum,
           qqAccount: _this.editQqNum,
           email: _this.editEmail,
@@ -137,6 +139,9 @@ export default {
           .catch(function(error) {
             console.log(error);
           });
+      }
+      else {
+        _this.$errorTips('保存参数有误');
       }
     },
     changeQqNum(txt) {
