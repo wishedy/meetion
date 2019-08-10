@@ -2,7 +2,8 @@
     <section class="ml-editInput">
         <span class="label-name" v-text="txt"></span>
         <figure class="input-bar">
-            <input type="text" :placeholder="placeText" v-model="contentTxt">
+            <input type="text" :placeholder="placeText" v-model="contentTxt" v-if="editOnOff">
+            <div class="edit-bar" v-if="!editOnOff"></div>
         </figure>
     </section>
 </template>
@@ -10,6 +11,12 @@
 import Common from '@scripts/lib/common.js';
 export default {
   props: {
+    editOnOff: {
+      default() {
+        return true;
+      },
+      type: Boolean
+    },
     txt: {
       default() {
         return '';
@@ -80,6 +87,19 @@ export default {
             font-weight:300;
             color:rgba(187,187,187,1);
             line-height:rem(44px);
+            .edit-bar{
+                outline: none;
+                border: none;
+                color:rgba(68,68,68,1);
+                font-size:rem(32px);
+                font-family:PingFangSC-Light;
+                font-weight:300;
+                line-height:rem(44px);
+                text-align: right;
+                float: right;
+                width: 100%;
+                height: 100%;
+            }
             input{
                 outline: none;
                 border: none;

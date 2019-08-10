@@ -4,6 +4,9 @@ class Common {
       let _this = this;
       _this.jumpUrl = _this.jumpUrl.bind(this);
         _this.checkInvalid = _this.checkInvalid.bind(this);
+        _this.getQueryString = _this.getQueryString.bind(this);
+        _this.jumpUrl = _this.jumpUrl.bind(this);
+        _this.nullString = _this.nullString.bind(this);
     }
     jumpUrl(url){
         if(window.location.href.indexOf("dist")>-1){
@@ -27,6 +30,25 @@ class Common {
         }else{
             return false;
         }
+    }
+    getQueryString(name) {
+        if (!name) {
+            return false;
+        }
+
+        var value = '';
+        var paramStr = window.location.search ? window.location.search.substr(1) : '';
+
+        if (paramStr) {
+            paramStr.split('&').forEach(function (param) {
+                var arr = param.split('=');
+                if (arr[0] == name) {
+                    value = arr[1];
+                }
+            });
+        }
+
+        return value;
     }
 
 }

@@ -2,7 +2,8 @@
     <section class="ml-editText">
         <section class="label-name" v-text="txt"></section>
         <figure class="text-container">
-            <textarea name="" id="" cols="30" rows="10" :placeholder="placeText" v-model="contentTxt"></textarea>
+            <textarea name="" id="" cols="30" rows="10" :placeholder="placeText" v-model="contentTxt" v-if="editOnOff"></textarea>
+            <article class="edit-panel" v-if="!editOnOff">fgrtrtrtr</article>
         </figure>
     </section>
 </template>
@@ -10,6 +11,12 @@
 import Common from '@scripts/lib/common.js';
 export default {
   props: {
+    editOnOff: {
+      default() {
+        return true;
+      },
+      type: Boolean
+    },
     txt: {
       default() {
         return '';
@@ -77,6 +84,20 @@ export default {
             background:rgba(246,246,246,1);
             border-radius:rem(12px);
             padding: rem(12px) rem(24px);
+            .edit-panel{
+                display: block;
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: none;
+                resize: none;
+                font-size:rem(32px);
+                font-family:PingFangSC-Regular;
+                font-weight:400;
+                background:rgba(246,246,246,1);
+                color:rgba(68,68,68,1);
+                line-height:rem(44px);
+            }
             textarea{
                 display: block;
                 width: 100%;

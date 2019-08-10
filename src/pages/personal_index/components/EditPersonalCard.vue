@@ -2,8 +2,8 @@
     <section class="ml-editPersonalCard">
         <HeaderModule :config="headerConfig"></HeaderModule>
         <section class="editPersonalCard">
-            <HeadLogo></HeadLogo>
-            <BgLogo></BgLogo>
+            <HeadLogo @click.native="jumpPage(0)"></HeadLogo>
+            <BgLogo @click.native="jumpPage(1)"></BgLogo>
             <EditInputBar txt="昵称" placeText="请输入您的昵称"></EditInputBar>
             <EditTextBar txt="爱情宣言" placeText="请输入您的爱情宣言"></EditTextBar>
         </section>
@@ -36,6 +36,19 @@ export default {
         title: '资料编辑'
       }
     };
+  },
+  methods: {
+    jumpPage(type) {
+      const _this = this;
+      switch (parseInt(type, 10)) {
+        case 0:
+          _this.$router.push({ name: 'logo', query: { editTitle: '编辑头像' } });
+          break;
+        case 1:
+          _this.$router.push({ name: 'logo', query: { editTitle: '编辑背景' } });
+          break;
+      }
+    }
   }
 };
 </script>

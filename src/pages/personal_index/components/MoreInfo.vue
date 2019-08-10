@@ -2,9 +2,9 @@
     <section class="ml-moreInfo">
         <TitleBar txt="更多资料"></TitleBar>
         <section class="ml-moreInfo-list">
-            <MoreInfoItem txt="家庭情况"></MoreInfoItem>
-            <MoreInfoItem txt="个人情况"></MoreInfoItem>
-            <MoreInfoItem txt="联系方式"></MoreInfoItem>
+            <MoreInfoItem txt="家庭情况" @click.native="jumpPage(0)"></MoreInfoItem>
+            <MoreInfoItem txt="个人情况" @click.native="jumpPage(1)"></MoreInfoItem>
+            <MoreInfoItem txt="联系方式" @click.native="jumpPage(2)"></MoreInfoItem>
         </section>
     </section>
 </template>
@@ -15,6 +15,22 @@ export default {
   components: {
     TitleBar,
     MoreInfoItem
+  },
+  methods: {
+    jumpPage(type) {
+      const _this = this;
+      switch (parseInt(type, 10)) {
+        case 0:
+          _this.$router.push({ name: 'family' });
+          break;
+        case 1:
+          _this.$router.push({ name: 'condition' });
+          break;
+        case 2:
+          _this.$router.push({ name: 'link' });
+          break;
+      }
+    }
   }
 };
 </script>

@@ -10,11 +10,12 @@
         <section class="ml-feedBack-publish">
             <PublishImage></PublishImage>
         </section>
-        <SureBtn txt="举报" class="save-btn"></SureBtn>
+        <SureBtn :txt="headerConfig.title" class="save-btn"></SureBtn>
         <CancelBtn txt="取消"></CancelBtn>
     </section>
 </template>
 <script>
+import Common from '@scripts/lib/common.js';
 import HeaderModule from '@components/HeaderModule.vue';
 import PublishImage from '@components/PublishImage.vue';
 import SureBtn from '@components/SureBtn.vue';
@@ -27,12 +28,15 @@ export default {
     CancelBtn
   },
   data() {
+    const editTitle = Common.getQueryString('editTitle');
     return {
       headerConfig: {
         backOnOff: true,
-        title: '举报'
+        title: decodeURIComponent(editTitle)
       }
     };
+  },
+  mounted() {
   }
 };
 </script>

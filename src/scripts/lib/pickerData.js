@@ -24,5 +24,14 @@ class PickerData {
         return areaData;
 
     }
+    getGenderdata(){
+        return [
+            [
+                '女',
+                '男'
+            ]
+        ];
+
+    }
 }
 export default new PickerData();

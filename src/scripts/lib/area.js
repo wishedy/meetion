@@ -18219,9 +18219,9 @@ const areaList = {
 
 provinceList.forEach((province) => {
   province.children = cityList[province.id]
-  province.children.forEach((city) => {
+  /*province.children.forEach((city) => {
     city.children = areaList[city.id]
-  })
+  })*/
 })
 
 export default provinceList

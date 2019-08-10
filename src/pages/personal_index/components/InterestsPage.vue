@@ -23,7 +23,7 @@
             <span class="interest-item" v-if="interestType===0">
                 刷抖音
             </span>
-            <span class="interest-item add-item">
+            <span class="interest-item add-item" @click.stop="addInterste">
                 +添加
             </span>
         </section>
@@ -31,13 +31,17 @@
             <div class="cancel-btn">取消</div>
             <div class="save-btn">保存</div>
         </section>
+        <AddInterest  style="display: none;"></AddInterest>
     </section>
 </template>
 <script>
 import HeaderModule from '@components/HeaderModule.vue';
+import AddInterest from './AddInterest';
+import $ from 'jquery';
 export default {
   components: {
-    HeaderModule
+    HeaderModule,
+    AddInterest
   },
   props: {
     interestType: {
@@ -53,6 +57,11 @@ export default {
       const selectColor = colorArr[Math.floor((Math.random() * colorArr.length))];
       const resultColor = { background: `rgba(${selectColor},.5)`, border: `.026667rem solid rgba(${selectColor},1)` };
       return resultColor;
+    },
+    addInterste() {
+      const element = $('.ml-addInterest');
+      element.fadeIn(300);
+      element.find('input').focus();
     }
   },
   data() {
