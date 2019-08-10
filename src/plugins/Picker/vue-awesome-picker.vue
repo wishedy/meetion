@@ -134,7 +134,6 @@ export default {
         default:
           data = this.data; break;
       }
-      console.log([...data]);
       return [...data];
     },
 
