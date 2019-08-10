@@ -7,7 +7,7 @@ import Router from 'vue-router';
 import Toast from '@plugins/Toast/toast.js';
 import ErrorTips from '@plugins/ErrorTips/errorTips.js';
 import routes from './router/router.config';
-import AwesomePicker from 'vue-awesome-picker';
+import AwesomePicker from '@plugins/Picker/index.js';
 Vue.use(AwesomePicker);
 Vue.use(Router);
 Vue.use(Toast);

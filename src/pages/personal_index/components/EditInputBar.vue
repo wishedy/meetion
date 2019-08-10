@@ -19,8 +19,7 @@ export default {
     txtContent: {
       default() {
         return '';
-      },
-      type: String
+      }
     },
     placeText: {
       default() {

@@ -52,6 +52,7 @@
     "animate.css": "^3.7.2",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.2",
+    "better-scroll": "^1.15.2",
     "chalk": "^2.4.2",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
@@ -67,8 +68,8 @@
     "shelljs": "^0.8.3",
     "style-loader": "^0.21.0",
     "vue": "^2.5.16",
-    "vue-awesome-picker": "^1.1.0",
     "vue-loader": "^15.7.1",
+    "vue-pickers": "^1.1.5",
     "vue-router": "^3.0.7",
     "vuex": "^3.0.1"
   }

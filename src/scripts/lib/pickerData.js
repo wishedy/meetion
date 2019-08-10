@@ -1,3 +1,4 @@
+import areaData from './area.js'
 class PickerData {
     constructor(){
         let _this = this;
@@ -20,38 +21,7 @@ class PickerData {
         ]
     }
     getCitydata(){
-        return [
-            {
-                value: 'A',
-                children: [
-                    { value: 'A-a' },
-                    { value: 'A-b' },
-                    { value: 'A-c' }
-                ]
-            },
-            {
-                value: 'B',
-                children: [
-                    { value: 'B-a' },
-                    { value: 'B-b' }
-                ]
-            },
-            {
-                value: 'C',
-                children: [
-                    { value: 'C-a' },
-                    { value: 'C-b' },
-                    { value: 'C-c' },
-                    { value: 'C-d' }
-                ]
-            },
-            {
-                value: 'D',
-                children: [
-                    { value: 'D-a' }
-                ]
-            }
-        ]
+        return areaData;
 
     }
 }

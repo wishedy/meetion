@@ -45,15 +45,18 @@ export default {
     selectCity() {
       const _this = this;
       _this.picker.data = PickerData.getCitydata();
+      console.log(PickerData.getCitydata());
       _this.picker.textTitle = '请选择家乡所在地';
+      console.log(_this.$refs.picker);
       _this.$refs.picker.show();
     }
   },
   data() {
+    const areaData = PickerData.getCitydata();
     return {
       picker: {
         colorConfirm: '#ff665a',
-        data: [],
+        data: areaData,
         anchor: [],
         textTitle: ''
       },
