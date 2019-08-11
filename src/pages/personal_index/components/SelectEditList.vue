@@ -24,7 +24,7 @@ export default {
             { title: '兴趣爱好', routerName: 'interest' },
             { title: '个人影集', routerName: 'photo' },
             { title: '我想说的话', routerName: 'speak' },
-            { title: '我想对你说的话', routerName: 'speak' },
+            { title: '我想对你说的话', routerName: 'speakToYou' },
             { title: '家庭情况', routerName: 'family' },
             { title: '个人情况', routerName: 'condition' },
             { title: '联系方式', routerName: 'link' }

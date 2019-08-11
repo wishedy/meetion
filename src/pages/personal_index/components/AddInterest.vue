@@ -4,9 +4,9 @@
             <h1 class="title">添加您的兴趣标签</h1>
             <div class="closeBtn" @click.stop="closeAddInterest"></div>
             <div class="input-bar">
-                <input type="text" placeholder="最多输入8个子">
+                <input type="text" placeholder="最多输入8个子" v-model="txtContent">
             </div>
-            <section class="submit-btn">确定</section>
+            <section class="submit-btn" @click.stop="subInfo">确定</section>
         </section>
     </section>
 </template>
@@ -17,7 +17,23 @@ export default {
     closeAddInterest() {
       const element = $('.ml-addInterest');
       element.hide();
+    },
+    subInfo() {
+      const _this = this;
+      _this.$emit('submitInterest');
+      _this.txtContent = '';
     }
+  },
+  watch: {
+    txtContent(n) {
+      const _this = this;
+      _this.$emit('onTxtChange', n);
+    }
+  },
+  data() {
+    return {
+      txtContent: ''
+    };
   }
 };
 </script>

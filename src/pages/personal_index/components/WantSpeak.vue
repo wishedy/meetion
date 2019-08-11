@@ -3,18 +3,20 @@
         <HeaderModule :config="headerConfig"></HeaderModule>
         <section class="speakContainer">
             <figure class="container">
-                <textarea name="" id="" cols="30" rows="10" placeholder="说说您想对ta说的话"></textarea>
-                <span class="num">50/50</span>
+                <textarea name="" id="" cols="30" rows="10" :placeholder="$route.name === 'speak'?'请输入您的爱情告白':'请输入您想对ta说的话'" v-model="txtContent"></textarea>
+                <span class="num" :class="{'error':txtContent.length===maxNum}">{{txtContent.length}}/{{maxNum}}</span>
             </figure>
         </section>
-        <SureBtn txt="保存" class="save-btn"></SureBtn>
+        <SureBtn txt="保存" class="save-btn" @click.native="saveWord"></SureBtn>
         <CancelBtn txt="取消"></CancelBtn>
     </section>
 </template>
 <script>
+import Common from '@scripts/lib/common.js';
 import HeaderModule from '@components/HeaderModule.vue';
 import SureBtn from '@components/SureBtn.vue';
 import CancelBtn from '@components/CancelBtn.vue';
+import axios from 'axios';
 export default {
   components: {
     HeaderModule,
@@ -22,12 +24,94 @@ export default {
     CancelBtn
   },
   data() {
+    const _this = this;
+    console.log(_this.$route.name);
+    const cid = localStorage.getItem('customerId');
+    const speakOnOff = _this.$route.name === 'speak';
+    const headerTitle = _this.$route.name === 'speak' ? '我想说的话' : '我想对你说的话';
     return {
       headerConfig: {
         backOnOff: true,
-        title: '我想说的话'
-      }
+        title: headerTitle
+      },
+      speakOnOff: speakOnOff,
+      infoId: '',
+      cid: cid,
+      txtContent: '',
+      maxNum: 60
     };
+  },
+  methods: {
+    saveWord() {
+      const _this = this;
+
+      if (!Common.checkInvalid(_this.infoId)) {
+        const params = {
+          id: _this.infoId
+        };
+        if (_this.speakOnOff) {
+          params.wantToSay = _this.txtContent;
+        }
+        else {
+          params.wantToSayForYou = _this.txtContent;
+        }
+        axios.post('/api/informations/update', params)
+          .then(function(response) {
+            console.log(response);
+            if (parseInt(response.data.code, 10) === 200) {
+              _this.$toast('保存成功');
+            }
+            else {
+              _this.$toast('获取信息失败');
+            }
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
+      else {
+        _this.$toast('参数有误');
+      }
+    },
+    getUserInfo() {
+      const _this = this;
+      axios.get('/api/informations/select', {
+        params: {
+          customerId: _this.cid
+        }
+      })
+        .then(function(response) {
+          console.log(response);
+          if (parseInt(response.data.code, 10) === 200) {
+            _this.infoId = Common.nullString(response.data.result.id);
+            if (_this.speakOnOff) {
+              _this.txtContent = Common.nullString(response.data.result.wantToSay);
+            }
+            else {
+              _this.txtContent = Common.nullString(response.data.result.wantToSayForYou);
+            }
+          }
+          else {
+            _this.$toast('获取信息失败');
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  },
+  mounted() {
+    const _this = this;
+    _this.getUserInfo();
+  },
+  watch: {
+    txtContent(n) {
+      const _this = this;
+      console.log(n);
+      if (n.length > _this.maxNum) {
+        _this.txtContent = n.substring(0, _this.maxNum);
+      }
+    }
   }
 };
 </script>

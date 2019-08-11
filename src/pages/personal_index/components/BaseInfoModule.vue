@@ -12,11 +12,35 @@
 import Common from '@scripts/lib/common.js';
 import TitleBar from './UserInfoTitle';
 import InfoBar from './InfoBar';
-import axios from 'axios';
 export default {
   components: {
     TitleBar,
     InfoBar
+  },
+  props: {
+    userInfo: {
+      default() {
+        return {};
+      },
+      type: Object
+    }
+  },
+  watch: {
+    userInfo(response) {
+      const _this = this;
+      console.log(response);
+      if (parseInt(response.data.code, 10) === 200) {
+        _this.trueName = Common.nullString(response.data.result.trueTame);
+        _this.infoId = Common.nullString(response.data.result.id);
+        _this.homeProvince = Common.nullString(response.data.result.homeProvince);
+        _this.province = Common.nullString(response.data.result.province);
+        _this.birthday = Common.nullString(response.data.result.birthday);
+        _this.gender = Common.nullString(response.data.result.gender);
+      }
+      else {
+        _this.$toast('获取信息失败');
+      }
+    }
   },
   computed: {
     editHomeProvince() {
@@ -50,10 +74,6 @@ export default {
       }
     }
   },
-  mounted() {
-    const _this = this;
-    _this.getUserInfo();
-  },
   methods: {
     resetProviunce(str) {
       let resultStr = '';
@@ -78,31 +98,6 @@ export default {
         }
       }
       return resultStr;
-    },
-    getUserInfo() {
-      const _this = this;
-      axios.get('/api/informations/select', {
-        params: {
-          customerId: _this.cid
-        }
-      })
-        .then(function(response) {
-          console.log(response);
-          if (parseInt(response.data.code, 10) === 200) {
-            _this.trueName = Common.nullString(response.data.result.trueTame);
-            _this.infoId = Common.nullString(response.data.result.id);
-            _this.homeProvince = Common.nullString(response.data.result.homeProvince);
-            _this.province = Common.nullString(response.data.result.province);
-            _this.birthday = Common.nullString(response.data.result.birthday);
-            _this.gender = Common.nullString(response.data.result.gender);
-          }
-          else {
-            _this.$toast('获取信息失败');
-          }
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
     }
   },
   data() {

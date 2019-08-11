@@ -47,6 +47,11 @@ export default {
       component: WantSpeak
     },
     {
+      path: '/speakToYou',
+      name: 'speakToYou',
+      component: WantSpeak
+    },
+    {
       path: '/card',
       name: 'card',
       component: EditPersonalCard
