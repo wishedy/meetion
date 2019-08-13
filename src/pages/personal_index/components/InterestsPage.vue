@@ -5,44 +5,9 @@
             <span class="interest-item" :style="createColor()" v-if="interestType===1">
                 美食
             </span>
-            <span class="interest-item" v-if="interestType===0">
-                美食
+            <span class="interest-item" v-text="item.describes" :key="item.id" v-for="(item) in SysHobbyList" v-if="interestType===0" :class="{'selected':item.sign}" @click.stop="selectLable(item,0)">
             </span>
-            <span class="interest-item selected" v-if="interestType===0">
-                听音乐
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                喵
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                十字绣
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                看电影
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                刷抖音
-            </span>
-            <span class="interest-item selected" v-if="interestType===0">
-                听音乐
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                看电影
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                十字绣
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                看电影
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                刷抖音
-            </span>
-            <span class="interest-item selected" v-if="interestType===0">
-                听音乐
-            </span>
-            <span class="interest-item" v-if="interestType===0">
-                刷抖音
+            <span class="interest-item" v-text="item.describes" :key="item.id" v-for="(item) in UserHobbyList" v-if="interestType===0" :class="{'selected':item.sign}" @click.stop="selectLable(item,1)">
             </span>
             <span class="interest-item add-item" @click.stop="addInterste">
                 +添加
@@ -50,7 +15,7 @@
         </section>
         <section class="handle-bar">
             <div class="cancel-btn">取消</div>
-            <div class="save-btn">保存</div>
+            <div class="save-btn" @click.stop="saveInfo">保存</div>
         </section>
         <AddInterest  style="display: none;" @onTxtChange="changeTxt" @submitInterest="submit"></AddInterest>
     </section>
@@ -85,6 +50,40 @@ export default {
       const _this = this;
       _this.addTxt = n;
     },
+    selectLable(item, type) {
+      const _this = this;
+      const checkSign = (id, list) => {
+        let innerIndex = -1;
+        for (let num = 0; num < list.length; num++) {
+          const dataItem = list[num];
+          console.log(id === dataItem.id);
+          if (id === dataItem.id) {
+            innerIndex = num;
+          }
+        }
+        return innerIndex;
+      };
+      let index = -1;
+      let checkList = [];
+      if (parseInt(type, 10) === 0) {
+        checkList = JSON.parse(JSON.stringify(_this.SysHobbyList));
+      }
+      else {
+        checkList = JSON.parse(JSON.stringify(_this.UserHobbyList));
+      }
+      index = checkSign(item.id, checkList);
+      console.log(checkList[index].sign, index);
+      checkList[index].sign = !(checkList[index].sign);
+      console.log(checkList[index].sign, index);
+      if (index > -1) {
+        if (parseInt(type, 10) === 0) {
+          _this.SysHobbyList = checkList;
+        }
+        else {
+          _this.UserHobbyList = checkList;
+        }
+      }
+    },
     getInterstesList() {
       const _this = this;
       axios.get('/api/userHobby/select', {
@@ -95,7 +94,8 @@ export default {
         .then(function(response) {
           console.log(response);
           if (parseInt(response.data.code, 10) === 200) {
-
+            _this.SysHobbyList = response.data.result.SysHobbyList;
+            _this.UserHobbyList = response.data.result.UserHobbyList;
           }
           else {
             _this.$toast('获取信息失败');
@@ -111,13 +111,17 @@ export default {
       if (!Common.checkInvalid(_this.addTxt)) {
         axios.post('/api/hobby/insert', {
           describes: _this.addTxt,
-          orderBy: _this.addNum
+          isSysHobby: 2,
+          customerId: _this.cid
         })
           .then(function(response) {
             console.log(response);
             if (parseInt(response.data.code, 10) === 200) {
               _this.addNum++;
               _this.addTxt = '';
+              _this.getInterstesList();
+              const element = $('.ml-addInterest');
+              element.hide();
             }
             else {
               _this.$toast('信息保存失败');
@@ -135,6 +139,39 @@ export default {
       const element = $('.ml-addInterest');
       element.fadeIn(300);
       element.find('input').focus();
+    },
+    saveInfo() {
+      const _this = this;
+      const saveList = (list) => {
+        const resultArr = [];
+        for (let num = 0; num < list.length; num++) {
+          const dataItem = list[num];
+          if (dataItem.sign) {
+            resultArr.push(dataItem.id);
+          }
+        }
+        return resultArr;
+      };
+      const resultlist = [...saveList(_this.UserHobbyList), ...saveList(_this.SysHobbyList)];
+      console.log(resultlist);
+      if (resultlist.length) {
+        axios.post('/api/userHobby/update', {
+          customerId: _this.cid,
+          hobbyIds: resultlist
+        })
+          .then(function(response) {
+            console.log(response);
+            if (parseInt(response.data.code, 10) === 200) {
+              _this.$toast('信息保存成功');
+            }
+            else {
+              _this.$toast('信息保存失败');
+            }
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
     }
   },
   mounted() {
@@ -148,6 +185,8 @@ export default {
         backOnOff: true,
         title: '兴趣爱好'
       },
+      SysHobbyList: [],
+      UserHobbyList: [],
       cid: cid,
       addTxt: '',
       addNum: 2
