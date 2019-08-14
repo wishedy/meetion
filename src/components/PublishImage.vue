@@ -65,18 +65,19 @@
 import axios from 'axios';
 export default {
   methods: {
-    publishImage() {
-      // const _this = this;
-      var file = document.getElementById('upload_file').files[0];
-      var formdata1 = new FormData();// 创建form对象
-      formdata1.append('img', file, file.name);// 通过append向form对象添加数据,可以通过append继续添加数据
-      // 或formdata1.append('img',file);
+    publishImage(e) {
+      const file = e.target.files[0];
+      const param = new FormData(); // 创建form对象
+      param.append('file', file, file.name);// 通过append向form对象添加数据
+      param.append('chunk', '0');// 添加form表单中其他数据
+      console.log(param.get('file')); // FormData私有类对象，访问不到，可以通过get判断值是否传进去
       const config = {
         headers: { 'Content-Type': 'multipart/form-data' }
       }; // 添加请求头
-      axios.post('/api/upload/uploadImg', formdata1, config).then(function(response) {
-        console.log(response);
-      });
+      axios.post('/api/upload/uploadImg', param, config)
+        .then(response => {
+          console.log(response.data);
+        });
     }
   },
   data() {
