@@ -154,17 +154,18 @@ export default {
       const resultlist = [...saveList(_this.UserHobbyList), ...saveList(_this.SysHobbyList)];
       console.log(resultlist);
       if (resultlist.length) {
-          let idList = '';
-          for(let num = 0;num<resultlist.length;num++){
-              if(num!=0){
-                  idList+=','+resultlist[num].id;
-              }else{
-                  idList+=resultlist[num].id;
-              }
+        let idList = '';
+        for (let num = 0; num < resultlist.length; num++) {
+          if (num !== 0) {
+            idList += ',' + resultlist[num].id;
           }
+          else {
+            idList += resultlist[num].id;
+          }
+        }
         axios.post('/api/userHobby/update', {
           customerId: _this.cid,
-          hobbyIds: resultlist
+          hobbyIds: idList
         })
           .then(function(response) {
             console.log(response);
