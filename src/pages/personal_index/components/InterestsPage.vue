@@ -153,33 +153,32 @@ export default {
       };
       const resultlist = [...saveList(_this.UserHobbyList), ...saveList(_this.SysHobbyList)];
       console.log(resultlist);
-      if (resultlist.length) {
-        let idList = '';
-        for (let num = 0; num < resultlist.length; num++) {
-          if (num !== 0) {
-            idList += ',' + resultlist[num].id;
+      let idList = '';
+      for (let num = 0; num < resultlist.length; num++) {
+        if (num !== 0) {
+          idList += ',' + resultlist[num];
+        }
+        else {
+          idList += resultlist[num];
+        }
+      }
+      axios.post('/api/userHobby/update', {
+        customerId: _this.cid,
+        hobbyIdStr: idList
+      })
+        .then(function(response) {
+          console.log(response);
+          if (parseInt(response.data.code, 10) === 200) {
+            _this.$toast('信息保存成功');
           }
           else {
-            idList += resultlist[num].id;
+            _this.$toast('信息保存失败');
           }
-        }
-        axios.post('/api/userHobby/update', {
-          customerId: _this.cid,
-          hobbyIds: idList
         })
-          .then(function(response) {
-            console.log(response);
-            if (parseInt(response.data.code, 10) === 200) {
-              _this.$toast('信息保存成功');
-            }
-            else {
-              _this.$toast('信息保存失败');
-            }
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      }
+        .catch(function(error) {
+          _this.$toast('信息保存失败');
+          console.log(error);
+        });
     }
   },
   mounted() {

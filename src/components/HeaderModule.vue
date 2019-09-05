@@ -22,6 +22,8 @@ export default {
   },
   methods: {
     reBack() {
+      const _this = this;
+      _this.$emit('reBackCallBack');
       window.history.back();
     }
   }
