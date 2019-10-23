@@ -16,18 +16,17 @@ let instance;
 }; */
 const loading = {
   showLoading() {
-    if (!instance) {
-      instance = new LoadingEle();
-      instance.vm = instance.$mount();
-      instance.show = true;
-      document.body.appendChild(instance.vm.$el);
-    }
+    instance = new LoadingEle();
+    instance.vm = instance.$mount();
+    instance.show = true;
+    console.log('调用');
+    document.body.appendChild(instance.vm.$el);
   },
   hideLoading() {
     console.log('逻辑进入', instance);
+    document.body.removeChild(instance.vm.$el);
     instance.show = false;
     instance.vm.$destroy();
-    document.body.removeChild(instance.vm.$el);
   }
 };
 /* loading.showLoading = (n) => {

@@ -7,8 +7,8 @@ const progress = (options) => {
   if (!instance) {
     instance = new ProgressTem();
     instance.vm = instance.$mount();
-    document.body.appendChild(instance.vm.$el);
   }
+  document.body.appendChild(instance.vm.$el);
   console.log(options);
   if (timer) {
     clearTimeout(timer);
@@ -30,7 +30,9 @@ const progress = (options) => {
     setTimeout(() => {
       instance.show = false;
       instance.vm.$destroy();
-      document.body.removeChild(instance.vm.$el);
+      if (instance.vm.$el) {
+        document.body.removeChild(instance.vm.$el);
+      }
     }, 800);
   }
   /* timer = setTimeout(() => {

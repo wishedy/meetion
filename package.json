@@ -71,6 +71,7 @@
     "swiper": "^4.5.0",
     "vue": "^2.5.16",
     "vue-loader": "^15.7.1",
+    "vue-photo-preview": "^1.1.3",
     "vue-pickers": "^1.1.5",
     "vue-router": "^3.0.7",
     "vuex": "^3.0.1"

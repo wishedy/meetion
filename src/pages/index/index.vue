@@ -2,7 +2,7 @@
     <section class="ml-mainInner">
         <TopHeader :nav="navIndex"></TopHeader>
         <Tab></Tab>
-        <PublishBar linkUrl="/publish_dynamic/publish_normal_dynamic.html"></PublishBar>
+        <PublishBar linkUrl="/publish_dynamic/publish_alone_dynamic.html"></PublishBar>
         <IndexContent></IndexContent>
     </section>
 </template>

@@ -14,7 +14,13 @@
 </template>
 <script>
 import TitleBar from './UserInfoTitle';
+import LoadImageSize from '@scripts/lib/loadImageSize.js';
 export default {
+  data() {
+    return {
+      bigImageData: []
+    };
+  },
   components: {
     TitleBar
   },
@@ -25,18 +31,39 @@ export default {
     },
     viewBigImage(index) {
       const _this = this;
-      const resultList = [];
-      for (let num = 0; num < _this.list.length; num++) {
-        resultList.push(
-          {
-            imageSrc: _this.list[num].imageUrl
-          }
-        );
-      }
       _this.$bigImage({
-        imageArr: resultList,
+        bigImageData: _this.bigImageData,
         index: index
       });
+    }
+  },
+  watch: {
+    list: {
+      deep: true,
+      handler() {
+        const _this = this;
+        const resultList = [];
+        for (let num = 0; num < _this.list.length; num++) {
+          resultList.push(
+            {
+              imageSrc: _this.list[num].imageUrl
+            }
+          );
+        }
+        const checkImageSize = new LoadImageSize({
+          onLoadCallBack(onLoad, complete, data) {
+            if (onLoad) {
+              console.log('正在加载图片');
+            }
+            else {
+              console.log('图片加载完毕');
+              _this.bigImageData = data;
+            }
+          },
+          imageList: resultList
+        });
+        checkImageSize.loadData();
+      }
     }
   },
   props: {

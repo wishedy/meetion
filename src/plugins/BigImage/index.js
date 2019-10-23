@@ -3,15 +3,13 @@ import BigImage from './BigImage.vue';
 const BigImageEm = Vue.extend(BigImage);
 let instance;
 const bigImage = (options) => {
-  console.log(instance + '+++++++');
   instance = new BigImageEm();
   instance.vm = instance.$mount();
   document.body.appendChild(instance.vm.$el);
-  console.log(options);
-  instance.imageArr = options.imageArr;
-  instance.localIndex = options.index;
+  instance.bigImageData = options.bigImageData;
+  instance.index = options.index;
   instance.destroyOnOff = true;
-  console.log(instance);
+  console.log('调用组件在这里');
 };
 bigImage.install = (Vue) => {
   console.log('install--------bigImage');

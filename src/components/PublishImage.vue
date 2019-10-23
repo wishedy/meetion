@@ -12,7 +12,7 @@
                 <em class="icon"></em>
             </i>
         </section>
-        <section class="ml-publish-imageItem ml-publish-imageBar">
+        <section class="ml-publish-imageItem ml-publish-imageBar" v-if="publishOnOff">
             <i class="icon"></i>
             <p>上传照片</p>
             <input accept="image/*" name="img" id="upload_file" type="file" class="ml-upload-image" @change="publishImage">
@@ -24,6 +24,12 @@ import axios from 'axios';
 import Common from '@scripts/lib/common.js';
 export default {
   props: {
+    publishMaxLen: {
+      default() {
+        return 10000;
+      },
+      type: Number
+    },
     insertList: {
       default() {
         return [];
@@ -35,6 +41,17 @@ export default {
         return [];
       },
       type: Array
+    }
+  },
+  computed: {
+    publishOnOff() {
+      const _this = this;
+      if (_this.exhibitionData.length) {
+        return (_this.exhibitionData.length < _this.publishMaxLen);
+      }
+      else {
+        return (_this.insertList.length < _this.publishMaxLen);
+      }
     }
   },
   methods: {
@@ -81,11 +98,21 @@ export default {
     },
     closeItem(index) {
       const _this = this;
-      _this.$emit('deleteItem', index);
+      _this.$confirm({
+        title: '您确定要删除这张照片？',
+        sureBack() {
+          _this.$emit('deleteItem', index);
+        }
+      });
     },
     closeOriginalItem(index) {
       const _this = this;
-      _this.$emit('deleteOriginal', index);
+      _this.$confirm({
+        title: '您确定要删除这张照片？',
+        sureBack() {
+          _this.$emit('deleteOriginal', index);
+        }
+      });
     }
   },
   data() {

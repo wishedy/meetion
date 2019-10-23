@@ -51,6 +51,11 @@ export default {
           console.log(response);
           if (parseInt(response.data.code, 10) === 200) {
             _this.exhibitionList = response.data.result;
+            const imageArr = ['https://img01.sogoucdn.com/app/a/07/80f2e20a98944a0fa662d3fc5f472e56', 'https://img03.sogoucdn.com/app/a/07/f13b5c3830f02b6db698a2ae43ff6a67', 'https://img03.sogoucdn.com/app/a/07/e58d89131f3a0882b804313208e0e983', 'https://img01.sogoucdn.com/app/a/07/80f2e20a98944a0fa662d3fc5f472e56', 'https://img03.sogoucdn.com/app/a/07/f13b5c3830f02b6db698a2ae43ff6a67', 'https://img03.sogoucdn.com/app/a/07/e58d89131f3a0882b804313208e0e983'];
+            for (let num = 0; num < response.data.result.length; num++) {
+              const item = response.data.result[num];
+              item.imageUrl = imageArr[num];
+            }
             console.log(_this.exhibitionList);
           }
           else {

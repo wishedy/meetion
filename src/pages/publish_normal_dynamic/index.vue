@@ -3,14 +3,14 @@
         <HeaderModule :config="headerConfig"></HeaderModule>
         <section class="speakContainer">
             <figure class="container">
-                <textarea name="" id="" cols="30" rows="10" placeholder="发布你想说的内容吧"></textarea>
-                <span class="num">50/50</span>
+                <textarea name="" id="" cols="30" rows="10" placeholder="发布你想说的内容吧" v-model="contents"></textarea>
+                <span class="num" :class="{'error':contents.length>maxLen}">{{maxLen-contents.length}}/{{maxLen}}</span>
             </figure>
         </section>
         <section class="ml-publishDynamic-publish">
-            <PublishImage></PublishImage>
+            <PublishImage :insertList="insertList" @insertPhoto="insertPhoto" :publishMaxLen="publishMaxLen" @deleteItem="deleteItem"></PublishImage>
         </section>
-        <SureBtn txt="发布" class="save-btn"></SureBtn>
+        <SureBtn txt="发布" class="save-btn" @click.native="publish"></SureBtn>
         <CancelBtn txt="取消"></CancelBtn>
         <section class="ml-publishAlone">我要遇见</section>
     </section>
@@ -20,6 +20,8 @@ import HeaderModule from '@components/HeaderModule.vue';
 import PublishImage from '@components/PublishImage.vue';
 import SureBtn from '@components/SureBtn.vue';
 import CancelBtn from '@components/CancelBtn.vue';
+import Common from '@scripts/lib/common.js';
+import PublishDynamic from '@scripts/lib/publishDynamic.js';
 export default {
   components: {
     HeaderModule,
@@ -27,8 +29,52 @@ export default {
     SureBtn,
     CancelBtn
   },
+  methods: {
+    insertPhoto(url) {
+      const _this = this;
+      _this.insertList.push(url);
+      console.log(_this.insertList);
+    },
+    deleteItem(index) {
+      const _this = this;
+      console.log(index);
+      _this.insertList.splice(index, 1);
+    },
+    publish() {
+      const _this = this;
+      if (Common.checkInvalid(_this.contents)) {
+        _this.$errorTips('请输入您发布的内容');
+      }
+      else {
+        const publishData = {
+          dynamicType: 3,
+          contents: _this.contents
+        };
+        const photos = _this.insertList.join(',');
+        if (!Common.checkInvalid(photos)) {
+          publishData.photos = photos;
+        }
+        PublishDynamic.publish({
+          data: publishData,
+          success(data) {
+            console.log(data);
+          }
+        });
+      }
+    }
+  },
+  watch: {
+    contents(n) {
+      const _this = this;
+      return n.length > _this.maxLen ? (_this.contents = _this.contents.substring(0, _this.maxLen)) : '';
+    }
+  },
   data() {
     return {
+      publishMaxLen: 9,
+      maxLen: 50,
+      insertList: [],
+      contents: '',
       headerConfig: {
         backOnOff: true,
         title: '发布动态'
