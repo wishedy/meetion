@@ -92,7 +92,7 @@ module.exports = webpackMerge(webpackBase, {
     },
     proxy:{
       '/api': {
-        target: 'http://47.94.193.122:8780',
+        target: 'http://39.104.168.167:8080',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/api'
